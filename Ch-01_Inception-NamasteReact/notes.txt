@@ -1,0 +1,17 @@
+Homework: 
+
+1. Read about Emmet 
+2. What is CDN (Content Delivery Network)? 
+3. What is Cross-Origin? 
+4. What is the difference between async and defer? (Watch YT video of Akshay on this topic) 
+
+Coding Assignment: 
+1. Build the Boilerplate code using HTML, JS, React 
+
+**Imp: 
+
+When passing children in React, we pass it using array. 
+
+Interview Question: 
+
+1. React Overriding whatever is in root with Render and only showing what is in render() 
