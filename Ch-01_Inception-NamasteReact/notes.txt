@@ -1,6 +1,15 @@
 Homework: 
 
-1. Read about Emmet 
+1. What does Emmet do?
+A. Emmet is kind of add-ons or plug-in for code editors that allow high speed coding into HTML, XML and 
+   other structured code via code assist.  
+
+2. Difference between libraries and frameworks?
+A. Libraries is something limited to module. class, object, functions and pre-written code.
+    Ex: Jquery,reactJs etc.
+   Whereas, Frameworks comprizes lots of API's, compliers, support program, library.
+    Ex: AngularJS, VueJS, Spring, NodeJS etc.
+
 2. What is CDN (Content Delivery Network)? 
 3. What is Cross-Origin? 
 4. What is the difference between async and defer? (Watch YT video of Akshay on this topic) 
