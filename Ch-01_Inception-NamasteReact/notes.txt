@@ -1,4 +1,4 @@
-Homework: 
+Homework Day-1: 
 
 1. What does Emmet do?
 A. Emmet is kind of add-ons or plug-in for code editors that allow high speed coding into HTML, XML and 
@@ -10,17 +10,32 @@ A. Libraries is something limited to module. class, object, functions and pre-wr
    Whereas, Frameworks comprizes lots of API's, compliers, support program, library.
     Ex: AngularJS, VueJS, Spring, NodeJS etc.
 
-2. What is CDN (Content Delivery Network)? 
-3. What is Cross-Origin? 
-4. What is the difference between async and defer? (Watch YT video of Akshay on this topic) 
+3. What is CDN (Content Delivery Network)? 
+A. CDN is content delivery network that fasten the transfer of assets needed for loading internet content 
+   including HTML pages, javascripts files, stylesheet, images, videos etc.
 
-Coding Assignment: 
-1. Build the Boilerplate code using HTML, JS, React 
+4. What is Cross-Origin? 
+A. 
 
-**Imp: 
+5. What is difference between React and React-Dom?
+A. React is complete library which contain different package for diffrent pupose like their is react for 
+   mobile app, for 3d model etc.
+   But React-dom is one of the packege in React whose only purpose is to render the item into browser.
 
-When passing children in React, we pass it using array. 
+6. What is the difference between async and defer?
+A. In async html parsing and script fetching happen in parallel, once the script is fetched then html parsing is 
+   put on hold and execution of script starts, once the script is executed completely then again the html parsing 
+   begins. And also in async the order of script execution is not considered.
 
-Interview Question: 
+   While in defer the html parsing and script fetching begin's in parallel same as async but once the script is
+   fetched completely, our html parsing still continues and when the html parsing is completed then only the 
+   script execution begins. And here the order of script execution is considered.   
 
-1. React Overriding whatever is in root with Render and only showing what is in render() 
+7. What is difference between react.development.js and react.production.js files via CDN?
+A. react.production and react.development both have same code but the difference is that react.production
+   is minified code and much optimize to be used for our production app. 
+
+
+    *Interview*
+1. .render will override all the content available into root container and that will be replaced with the content passed 
+   under render function.
