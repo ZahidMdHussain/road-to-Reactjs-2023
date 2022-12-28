@@ -15,7 +15,8 @@ A. CDN is content delivery network that fasten the transfer of assets needed for
    including HTML pages, javascripts files, stylesheet, images, videos etc.
 
 4. What is Cross-Origin? 
-A. 
+A. Crossorigin attribute is used to set the mode of request to CORS (Cross origin resource sharing) request.
+   Its purpose is to share the resources from one domain to another domain. It is used to handle CORS request and checks if it is safe to share resources between domains.
 
 5. What is difference between React and React-Dom?
 A. React is complete library which contain different package for diffrent pupose like their is react for 
@@ -23,18 +24,21 @@ A. React is complete library which contain different package for diffrent pupose
    But React-dom is one of the packege in React whose only purpose is to render the item into browser.
 
 6. What is the difference between async and defer?
-A. In async html parsing and script fetching happen in parallel, once the script is fetched then html parsing is 
-   put on hold and execution of script starts, once the script is executed completely then again the html parsing 
-   begins. And also in async the order of script execution is not considered.
+A. Async and defer are attributes of script tag used to specify how browser should handle the script when loading a page.
 
-   While in defer the html parsing and script fetching begin's in parallel same as async but once the script is
-   fetched completely, our html parsing still continues and when the html parsing is completed then only the 
-   script execution begins. And here the order of script execution is considered.   
+     By Default: While parsing the HTML code when browser encounters script tag, it pauses the parsing, fetches the script from network and executes the script then and there. Once the script is executed after that browser resumes HTML parsing.
+
+     Using async attribute: While HTML parsing is going on, scripts are fetched from the network asynchronously, once scripts are fetched, HTML parsing pauses and scripts are executed then and there and once the scripts are executed, HTML parsing resumes.
+                            
+     Using defer attribute: Feches the script while HTML parsing is going on but executes the script only when HTML parsing is finished.   
 
 7. What is difference between react.development.js and react.production.js files via CDN?
 A. react.production and react.development both have same code but the difference is that react.production
    is minified code and much optimize to be used for our production app. 
 
+8. Why is React known as React?
+A. React renders everything that is changing in the webpage constantly. The change being made depends upon 
+   the changes in the state of the application. So, reacting to every change in the state got React to be called React.
 
     *Interview*
 1. .render will override all the content available into root container and that will be replaced with the content passed 
