@@ -1,0 +1,76 @@
+1. What is NPM?
+A. Npm is package manager which provide and help in adding different package to our application which in turn 
+   provide more power to our react application. It boast the performance the applications.
+
+2. What is Parcel/Webpack? Why do we need it.
+A. Parcel/Webpack is a bundlers, which has different package/modules into it.
+   We need them to make our developemnt code ready for production. These bundlers make our code more optimized, minified,
+   compatible with diffrent browser and much more.
+
+3. What is parcel-cache?
+A. Parcel-cache is loaction where parcel store all the previous build related information. This help parcel to retrive
+   previous build information and which in turn reduce the build duration.
+
+4. What is npx?
+A. Npx stands for 'Node package execute', it is npm package runner which execute any package of npm even if that is not 
+   installed.
+
+5. What is difference between dependencies and dev-dependencies?
+A. In package.json the dependencies module will be used during developemnt and also in production.
+   but dev-dependencies will only be used during developemnt.
+
+6. What is tree shaking?
+A. Tree shaking is term commonly used within javascript to describe the removal of dead code.
+   When bundling multiple files into single it removes the dead code which is important for production ready.
+
+7. What is Hot Module Replacement?
+A. HMR imporves the developemnt experience bu updating the module in the browser at runtime without need of 
+   whole page refresh. That means the application state can be retained as you change small things into your code.
+
+8. List down your favourite 5 superpowers of Parcel and describe any 3 of them in your own words.
+A. Minify : This power of parcel help to minimize the size of code by removing the extra space's and other jargans.
+            Its reduce the file size to much extent and the app is light weighted.
+
+   Cashing : Parcel caches everything it builds to disk. If you restart the dev server, Parcel will only rebuild 
+             files that have changed since the last time it ran. Parcel automatically tracks all of the files, 
+             configuration, plugins, and dev dependencies that are involved in your build.
+
+   Hot reloading : When you make any changes in code parcel automatically upadte the code in browser, no 
+                   page reloading necessary.
+
+   Code splitting
+   Image optimization
+
+9. What is .gitignore? What should we add and not add into it? 
+A. .gitignore is a git file that is used as refrence while we push our code to git basically the filename present
+   under this would be ignored while we push our code to git server.
+
+   We should add all those files which can easily be rendered with the helip of package.json and package-lock.json.
+   like -> .parce-cache, dist, node_modules.
+
+   We should not add our source code, package.json, package-lock.json and media files.
+
+10. What is the difference between package.json and package-lock.json?
+A.  package.json stores breif information about project and dependent package.
+    whereas, package-lock.json stores details information about each dependent package and modules. it conatin name, 
+    dependencies and locked version of project.
+
+11. Why should I not modify package-lock.json?
+A.  We should avoid modifying the package-lock.json bcoz it is auto generated file rather manually desined.
+    Its purpose is to track the entire tree dependencies and exact version of each dependency.
+
+12. What is node_modules ? Is it a good idea to push that on git?
+A.  node module is a directory which stores all install packages of node. Node.js is trained to look for this folder
+    in order to find the dependent packages is installed or not.
+    No, the node module should never ne pushed to git since it is very heavy object. We can easily generate the 
+    node module with the information from package.json and package-lock.json.
+
+13. What is the dist folder?
+A.  dist folder is a place where developed code are converted to optimized and production ready. dist folder is used 
+    when production build of application is done.
+
+14. What is browserlists?
+A.  Browserslist is a tool that allows specifying which browsers should be supported by your application by 
+    specifying "queries" in a config file.
+    
+    Ex: "browserslist": ["last 2 major versions"] ==> your application will run on the last 2 major versions of all available browsers.
