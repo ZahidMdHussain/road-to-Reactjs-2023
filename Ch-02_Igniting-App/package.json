@@ -2,9 +2,8 @@
   "name": "ch-02_igniting-app",
   "version": "1.0.0",
   "description": "Igniting our app with bundlers",
-  "main": "App.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "parcel index.html",
     "build": "parcel build index.html"
   },
