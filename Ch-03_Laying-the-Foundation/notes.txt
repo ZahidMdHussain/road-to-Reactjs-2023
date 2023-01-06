@@ -11,7 +11,7 @@ A.  1> Readibilty and developer friendly.
 3. Role of type attribute in script tag? What other option i can use there?
 A. type attribute of script tag is MIME (Multipurpose Internet Mail Extension) type of script and identify the content
    of the tag. It has default value which is "text/javascript".
-   common medai type values are:
+   common media type values are:
    > text/javascript (this is default)
    > text/ecmascript
    > application/ecmascript
