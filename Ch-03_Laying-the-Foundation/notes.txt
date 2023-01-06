@@ -1,0 +1,23 @@
+1. What is JSX?
+A. JSX stand for JavaScript XML, it allows to write HTML into Javascript file and place them in DOM without any 
+   createElement() or appendChild() api.
+
+2. What are superpower of JSX?
+A.  1> Readibilty and developer friendly.
+    2> Less code needed as compared to javascript.
+    3> Faster than normal JavaScript as it performs optimizations while translating to regular JavaScript.
+    4> If one is familiar with HTML, it is quite easy to use JSX when building React application.
+
+3. Role of type attribute in script tag? What other option i can use there?
+A. type attribute of script tag is MIME (Multipurpose Internet Mail Extension) type of script and identify the content
+   of the tag. It has default value which is "text/javascript".
+   common medai type values are:
+   > text/javascript (this is default)
+   > text/ecmascript
+   > application/ecmascript
+   > application/javascript 
+
+4. {TitleComponent} vs {<TitleComponent />} vs {<TitleComponent><TitleComponent/>} in JSX?
+A. {TitleComponent} => This is react element created with the help of JSX.
+   {<TitleComponent />} => This is react components created with the help of JSX.
+   {<TitleComponent><TitleComponent/>} => 
