@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    background-color:#ECF0F1;
+    padding:1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 5px 8px #ccc;
+}
+
+.navbar .logo{
+    width: 95px;
+}
+.navbar input{
+    border: 1px solid #85929E;
+    padding: 8px;
+    width: 400px;
+    border-radius: 8px;
+}
+.navbar input:focus{
+    outline: none;
+}
+.navbar .user{
+    width: 35px;
+    height: 35px;
+    background: url(./img/user.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.navbar .user:hover{
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .navbar input{
+        width: 170px;
+    }
+    .navbar .logo{
+        width: 85px;
+    }
+}
