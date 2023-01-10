@@ -1,3 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;500&display=swap');
 .footer{
-    background-color: crimson;
+    background-color: black;
+    display: flex;
+    padding: 2rem 3rem;
+    margin-top:1rem ;
+    justify-content: space-evenly;   
+    font-family: 'Chivo', sans-serif; 
+    color: #ECF0F1;
+}
+
+.footer > ul{
+    list-style: none;
+}
+
+.footer > ul li{
+    padding: .4rem 0;
+}
+
+.footer > ul li:first-of-type{
+    font-weight: bolder;
+    margin-bottom: 1rem;
+    color: #909497;
+}
+
+.footer > ul li:first-of-type:hover{
+    cursor: default;
+    color: #909497;
+}
+
+.footer > ul li:hover{
+    cursor: pointer;
+    color: #fff;
+    font-weight: bolder;
+}
+
+.download-here > li img{
+    width: 150px;
+}
+
+.download-here > li:hover{
+    transform: scale(1.1,1.1);
+    transition: .5s
 }

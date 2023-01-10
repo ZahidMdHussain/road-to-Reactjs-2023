@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap');
 *{
     box-sizing: border-box;
 }
 .main{
-    background-color: #fff;
+    background-color: #F4F6F7;
     padding: 1rem 2rem;
     margin-top: 1rem;
 }
@@ -38,6 +39,8 @@
     margin-top:1rem ;
     justify-content: center;
     align-items: center;
+    font-family: 'IBM Plex Serif', serif;
+    box-shadow: 0 1px 3px #ccc;
 }
 
 .main >.card-container > .card{
@@ -62,11 +65,15 @@
     justify-content: space-between;
     border-bottom: 1px solid #ccc;
     align-items: center;
+    font-size: .8rem;
+    font-weight: 800;
 }
 
 .anchor {
     width: 100%;
     text-align: center;
+    font-family: 'Signika Negative', sans-serif;
+
 }
 .anchor a{
     padding: 1rem 0;
@@ -75,7 +82,7 @@
     display: block;
 }
 .anchor a:hover{
-    color:#3bd079;
+    color:#22dd70;
 }
 
 .main >.card-container > .card:hover{
