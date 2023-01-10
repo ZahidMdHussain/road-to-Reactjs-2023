@@ -30,7 +30,7 @@ function Main () {
             </div>
             <div className='card-container'>
             {data.map((each_resturant) =>{
-                return  <Card {...each_resturant} />
+                return  <Card {...each_resturant} key={each_resturant.id} />
             })
             }
                 
