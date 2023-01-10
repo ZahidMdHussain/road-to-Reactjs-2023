@@ -1,0 +1,49 @@
+1. Is JSX mandatory for React?
+A. No, JSX is a way of creating UI components, which makes our work more easier in comparison to React.createElemet.
+
+2. Is ES6 mandatory for React?
+A. No, ES6 is enhanced version of javascript which include map, const, spread operator, destructuring and many more.
+   Which at the end achive the requrement with less code and in much optimize way.
+
+3. How can i write comment in JSX?
+A. Block comment {/* */}
+
+4. What is <React.Fragment></React.Fragment> and <></>?
+A. They are React Fragment, It is a component provided from react library which helps to enclose all our react
+   components  or elements into single parent components. Its just a empty tag.
+
+5. What is Virtual DOM?
+A. Representation of actual DOM stored in memory in form tree and are always synced with real DOM. This is done by 
+   react to render only newly added or changed elements rather than rendering the whole page again and again. 
+
+6. What is Reconciliation in react?
+A. Reconciliation means that react uses diff algorithms to find out difference between trees (real DOM and virtual DOM)
+   and just update the changed portion of UI from virtual DOM to real DOM.
+
+7. What is React Fibre?
+A. React Fiber is the new reconciliation engine in React 16. Its main goal is to enable incremental(faster) rendering
+   of the virtual DOM. 
+
+8. Why do we need Key in react? When do we need key in react?
+A. Key is used to uniquely identify our react elements so that the reconciliation can easily find the new added element
+   and only re-render that elements intead of re-rendering all the similar elements.
+   We need Key in react when we have multiple elements of same html tag.
+
+9. Can we use index as key in react?
+A. No we should not use index as a key in react, if the order of items may change. This can negatively impact 
+   performance and may cause issues with component state.
+   If ther is no unique code available then in that case we can use index as a key in react.
+
+10. What is props in react?
+A.  In react every components at the end is javascript function so the parameters passed into functional components
+    are called props. 
+    Ex. function Header(props){
+        return (
+            <h1>Hello {props.name}</h1>
+        );
+    };
+
+11. What is config driven UI?
+A.  The UI which are created based on confiq file are called confiq driven UI. If the confiq file are changed then 
+    similarly our UI should also be changed.
+
