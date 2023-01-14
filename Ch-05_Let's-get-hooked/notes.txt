@@ -1,0 +1,23 @@
+1. What is difference between Named export, Default export and *as export?
+A. With named export one can have multiple export per file. And import the specific exported module they want
+   surronded with braces. The name of imported module has to be same as the name of the exported module.
+   syntax : export function header
+            import {header} from "./container/header"    
+
+   With default export one can have only one default export per file. During import we have to specify name which can be same as export or can be diffrent.
+   syntax : export default Footer
+            import Footer from "./cantainer/footer"
+
+   * as import will import all the module from the specific file into * which can be named any.
+   syntax : import * as container from "./conatiners" 
+
+2. What is importance of confiq.js file?
+A. confiq.js file holds all the absolute data into some variable which can be further used by our application into 
+   multiple place. This is done to reduce the effort of maintaing the application. If some data has to be changed then we can make the change into confiq.js file and that would update the data wherever it is being used. 
+
+3. What is React Hooks?
+A. Hook is a javascript function.
+
+4. Why do we need useState hook?
+A. useState hook is one kind of hook which is used to create local state variable to track the state of functional 
+   componets. useState returns array of [state varaible , state function].
