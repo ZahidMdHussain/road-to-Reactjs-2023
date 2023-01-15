@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './main.css';
 import { img_cdn_path, dataobj} from '../confiq';
 import { useState, useEffect } from 'react';
+import Shimmer from './Shimmer';
 
 
 function Card({cloudinaryImageId,name,cuisines,avgRating,deliveryTime,costForTwoString}) {
@@ -23,7 +24,7 @@ function Card({cloudinaryImageId,name,cuisines,avgRating,deliveryTime,costForTwo
 
 function filterSerachCard(searchInputText, restaurantList){
     const filterData = restaurantList.filter((restaurant) => 
-        restaurant.data.name.includes(searchInputText)
+        restaurant?.data?.name?.toLowerCase().includes(searchInputText.toLowerCase())
     );
     return filterData;
 }
@@ -32,7 +33,9 @@ function filterSerachCard(searchInputText, restaurantList){
 
 function Main () {
     const [searchText, setSearchText] = useState("");
-    const [restaurants, setRestaurant] = useState([]);
+    const [filteredRestaurants, setFilteredRestaurant] = useState([]);
+    const [allRestaurants, setAllRestaurant] = useState([]);
+    // let msg = "Data is being fetched..";
     // intialize useEffect
 
     useEffect(() => {
@@ -45,7 +48,8 @@ function Main () {
         const data = await fetch ('https://www.swiggy.com/dapi/restaurants/list/v5?lat=24.7913957&lng=85.0002336&page_type=DESKTOP_WEB_LISTING');
         const json = await data.json();
         // console.log(json);
-        setRestaurant(json?.data?.cards[2]?.data?.data?.cards);
+        setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
+        setAllRestaurant(json?.data?.cards[2]?.data?.data?.cards);
     }
 
     return (
@@ -57,18 +61,23 @@ function Main () {
                     setSearchText(e.target.value)
                 }}/>
                 <button className='serach-btn' onClick={() => {
-                    const filteredRestaurants = filterSerachCard(searchText, restaurants);
-                    setRestaurant(filteredRestaurants);
+                    const filteredRestaurants = filterSerachCard(searchText, allRestaurants);
+                    setFilteredRestaurant(filteredRestaurants);
+                    // if (filteredRestaurants.length===0){
+                    //     msg = "No Match item found.."
+                    // }else{
+                    //     msg = "Data is being fetched..";
+                    // }
                 }}>Search</button>
                 </div>  
             </div>
-
             <div className='card-container'>
-            {restaurants.map((each_resturant) =>{
-                return  <Card {...each_resturant.data} key={each_resturant.data.id} />
+            {(filteredRestaurants.length===0?<Shimmer />:
+            filteredRestaurants.map((each_resturant) =>{
+                return  <Card {...each_resturant?.data} key={each_resturant?.data?.id} />
             })
-            }
-                
+            
+            )} 
             </div>
         </div>
     );
