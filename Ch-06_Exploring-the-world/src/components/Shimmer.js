@@ -1,7 +1,7 @@
-const Shimmer = () => {
+const Shimmer = (props) => {
     return (
         <>
-            <h1>Data is being fetched...</h1>
+            <h1>{props.message}</h1>
         </>
     );
 }

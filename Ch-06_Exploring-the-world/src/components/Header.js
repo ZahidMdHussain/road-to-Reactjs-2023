@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './header.css';
 
+
+
+
+
 function Header () {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     return (
         <div className='header'>
             <div className='logo'></div>
@@ -15,7 +20,9 @@ function Header () {
                     <li><a href="#" >Cart</a></li>
                 </ul>
             </div>
-            
+            { isLoggedIn?<button className='signStatus' onClick={() => {setIsLoggedIn(false)}}>LogOut</button>:
+            <button className='signStatus' onClick={() => {setIsLoggedIn(true)}}>LogIn </button>
+            }
         </div>
     );
 }

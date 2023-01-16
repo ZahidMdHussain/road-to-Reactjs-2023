@@ -35,7 +35,6 @@ function Main () {
     const [searchText, setSearchText] = useState("");
     const [filteredRestaurants, setFilteredRestaurant] = useState([]);
     const [allRestaurants, setAllRestaurant] = useState([]);
-    // let msg = "Data is being fetched..";
     // intialize useEffect
 
     useEffect(() => {
@@ -63,21 +62,16 @@ function Main () {
                 <button className='serach-btn' onClick={() => {
                     const filteredRestaurants = filterSerachCard(searchText, allRestaurants);
                     setFilteredRestaurant(filteredRestaurants);
-                    // if (filteredRestaurants.length===0){
-                    //     msg = "No Match item found.."
-                    // }else{
-                    //     msg = "Data is being fetched..";
-                    // }
                 }}>Search</button>
                 </div>  
             </div>
-            <div className='card-container'>
-            {(filteredRestaurants.length===0?<Shimmer />:
+            <div className='card-container'>    
+            {(allRestaurants.length===0?<Shimmer message="Data is being fetched"/>:
             filteredRestaurants.map((each_resturant) =>{
                 return  <Card {...each_resturant?.data} key={each_resturant?.data?.id} />
             })
+            )}
             
-            )} 
             </div>
         </div>
     );
