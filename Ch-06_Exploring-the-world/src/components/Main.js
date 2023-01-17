@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './main.css';
 import { img_cdn_path, dataobj} from '../confiq';
 import { useState, useEffect } from 'react';
-import Shimmer from './Shimmer';
+import Shimmer, {NoRestaurant} from './Shimmer';
 
 
 function Card({cloudinaryImageId,name,cuisines,avgRating,deliveryTime,costForTwoString}) {
@@ -35,14 +35,13 @@ function Main () {
     const [searchText, setSearchText] = useState("");
     const [filteredRestaurants, setFilteredRestaurant] = useState([]);
     const [allRestaurants, setAllRestaurant] = useState([]);
+    
     // intialize useEffect
-
     useEffect(() => {
         getApiData()
     },[])
 
     // api call functions
-    
     async function getApiData(){
         const data = await fetch ('https://www.swiggy.com/dapi/restaurants/list/v5?lat=24.7913957&lng=85.0002336&page_type=DESKTOP_WEB_LISTING');
         const json = await data.json();
@@ -66,7 +65,8 @@ function Main () {
                 </div>  
             </div>
             <div className='card-container'>    
-            {(allRestaurants.length===0?<Shimmer message="Data is being fetched"/>:
+            {(allRestaurants.length===0?<Shimmer />:
+            filteredRestaurants.length===0?<NoRestaurant />:
             filteredRestaurants.map((each_resturant) =>{
                 return  <Card {...each_resturant?.data} key={each_resturant?.data?.id} />
             })
