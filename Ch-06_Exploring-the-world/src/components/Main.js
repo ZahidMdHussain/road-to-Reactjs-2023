@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './main.css';
-import { img_cdn_path, dataobj} from '../confiq';
+import { img_cdn_path} from '../confiq';
 import { useState, useEffect } from 'react';
 import Shimmer, {NoRestaurant} from './Shimmer';
 
@@ -45,7 +45,6 @@ function Main () {
     async function getApiData(){
         const data = await fetch ('https://www.swiggy.com/dapi/restaurants/list/v5?lat=24.7913957&lng=85.0002336&page_type=DESKTOP_WEB_LISTING');
         const json = await data.json();
-        // console.log(json);
         setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
         setAllRestaurant(json?.data?.cards[2]?.data?.data?.cards);
     }

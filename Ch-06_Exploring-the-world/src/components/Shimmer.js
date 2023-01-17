@@ -2,7 +2,7 @@ import "./shimmer.css"
 
 export const NoRestaurant = () => {
     return (
-        <h1 className="noRestaurant">Search Restaurant Not Found..</h1>
+        <h1 className="noRestaurant">Searched Restaurant Not Found..</h1>
     );
 }
 
