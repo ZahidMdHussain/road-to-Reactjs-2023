@@ -64,6 +64,8 @@
     width: 300px;
     padding: 1rem 1rem 0 1rem;
     border: 1px solid #fff;
+    text-decoration: none;
+    color: #000;
 }
 
 .main >.card-container > .card img{
@@ -91,14 +93,15 @@
     font-family: 'Signika Negative', sans-serif;
 
 }
-.anchor a{
+.anchor span{
     padding: 1rem 0;
     text-decoration: none;
     color:#38a4eb;
     display: block;
 }
-.anchor a:hover{
+.anchor span:hover{
     color:#22dd70;
+    cursor: pointer;
 }
 
 .main >.card-container > .card:hover{

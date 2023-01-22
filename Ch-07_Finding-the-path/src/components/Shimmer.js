@@ -6,6 +6,49 @@ export const NoRestaurant = () => {
     );
 }
 
+//Add css gto it
+const ResturantsTabs = () => {
+    return (
+        <>
+            <div className="shimmer-menu">
+                <div className="each-menus">
+                    <div className="text-x"></div>
+                    <div className="text-y"></div>
+                    <div className="text-z"></div>
+                </div>
+                <div className="menu-images"></div>
+            </div>
+        </>
+    )
+}
+
+export const ResturantShimmer = () => {
+    return (
+        <>
+            <div className="resturants-heading">
+                <div className="info">
+                    <div className="text-1"></div>
+                    <div className="text-2"></div>
+                    <div className="text-3"></div>
+                    <div className="text-4"></div>
+                </div>
+                <div className="image">
+                    <div className="img"></div>
+                </div>
+            </div>
+            <div className="reataurants-menu">
+                <ResturantsTabs />
+                <ResturantsTabs />
+                <ResturantsTabs />
+                <ResturantsTabs />
+                <ResturantsTabs />
+            </div>
+        </>
+    )
+}
+
+//
+
 const ShimmerCard = () => {
     
     return (

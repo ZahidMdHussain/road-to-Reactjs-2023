@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
+import {Link} from "react-router-dom";
 import './header.css';
 
 
@@ -13,11 +14,11 @@ function Header () {
             <div className='logo'></div>
             <div className="nav-item">
                 <ul>
-                    <li><a href="#" >Home</a></li>
-                    <li><a href="#" >About</a></li>
-                    <li><a href="#" >Contact</a></li>
-                    <li><a href="#" >Help</a></li>
-                    <li><a href="#" >Cart</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
+                    <li><Link to="/help">Help</Link></li>
+                    <li><Link to="/cart">Cart</Link></li>
                 </ul>
             </div>
             { isLoggedIn?<button className='signStatus' onClick={() => {setIsLoggedIn(false)}}>LogOut</button>:

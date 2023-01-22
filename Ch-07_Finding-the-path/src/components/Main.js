@@ -4,6 +4,7 @@ import './main.css';
 import { img_cdn_path} from '../confiq';
 import { useState, useEffect } from 'react';
 import Shimmer, {NoRestaurant} from './Shimmer';
+import {Link} from 'react-router-dom';
 
 
 function Card({cloudinaryImageId,name,cuisines,avgRating,deliveryTime,costForTwoString}) {
@@ -17,7 +18,7 @@ function Card({cloudinaryImageId,name,cuisines,avgRating,deliveryTime,costForTwo
                     <p>{deliveryTime} MINS</p>
                     <p>{costForTwoString}</p>
                 </div>
-                <p className='anchor'><a href="#">QUICK VIEW</a></p>
+                <p className='anchor'><span href="#">QUICK VIEW</span></p>
             </div>
     )
 }
@@ -43,13 +44,13 @@ function Main () {
 
     // api call functions
     async function getApiData(){
-        const data = await fetch ('https://www.swiggy.com/dapi/restaurants/list/v5?lat=24.7913957&lng=85.0002336&page_type=DESKTOP_WEB_LISTING');
+        const data = await fetch ('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING');
         const json = await data.json();
         setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
         setAllRestaurant(json?.data?.cards[2]?.data?.data?.cards);
     }
 
-    return (
+    return (!allRestaurants)?null:(
         <div className='main'>
             <div className='sub-head'>
                 <p>Top restaurants of day</p>
@@ -67,7 +68,9 @@ function Main () {
             {(allRestaurants.length===0?<Shimmer />:
             filteredRestaurants.length===0?<NoRestaurant />:
             filteredRestaurants.map((each_resturant) =>{
-                return  <Card {...each_resturant?.data} key={each_resturant?.data?.id} />
+                return  <Link className='card' to={"/restaurants/"+each_resturant?.data?.id} key={each_resturant?.data?.id} >
+                <Card {...each_resturant?.data} />
+                </Link>
             })
             )}
             
