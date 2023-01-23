@@ -25,6 +25,7 @@ const ResturantsTabs = () => {
 export const ResturantShimmer = () => {
     return (
         <>
+        <div className="shimmer-body">
             <div className="resturants-heading">
                 <div className="info">
                     <div className="text-1"></div>
@@ -42,7 +43,9 @@ export const ResturantShimmer = () => {
                 <ResturantsTabs />
                 <ResturantsTabs />
                 <ResturantsTabs />
+                <ResturantsTabs />
             </div>
+        </div>
         </>
     )
 }

@@ -15,7 +15,7 @@ const SelectResturant = () => {
     async function getResturantData(){
         const data = await fetch('https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId='+id);
         const json = await data.json();
-        // setSeeResturant(json.data);
+        setSeeResturant(json.data);
     }
 
     
@@ -37,7 +37,6 @@ const SelectResturant = () => {
             </div>
             <h1 className="heading-menu">All menu items</h1>
             <div className="resturant-menu">
-                {/* <div className=""> */}
                 {Object.values(seeResturant?.menu?.items)
                 .slice(0,21).map((item)=> {
                 return (
@@ -45,7 +44,7 @@ const SelectResturant = () => {
                     <div className="menu-info">
                     <h4>{item.name}</h4>
                     <h5>{item.category}</h5>
-                    <h6>InStock - {(item.inStock==1)?"True":"False"}</h6>
+                    <h6>InStock - {(item.inStock==1)?"Yes":"No"}</h6>
                     </div>
                     <div className="menu-img">
                         <img src={img_cdn_path+item.cloudinaryImageId} alt="menu-item-img" />
@@ -53,7 +52,6 @@ const SelectResturant = () => {
                 </div>
                 );
                 })}
-                {/* </div>   */}
             </div>
             </div>
         </div>
