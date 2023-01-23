@@ -1,47 +1,28 @@
-1. What is Microservices?
-A. Microservices are the architectural and organizational approch to software developemnt where software are composed
-   of small independent services that communicate over well defined APIs. These services are owned by small self-contained teams.
+1. What are the various ways to add image into our App? Explain with example.
+A. Thers are 2 ways to add imange:
+   i> Using CDN link : Here we upload image to some server and then use the CDN link in our app to get that image.
+      Synatx: <img src = "some CDN link" alt = "my-image" />
+   
+   ii> Using import : Here we store the image locally into our system and inside our application we import that image
+       and use them. 
+       synatx: import logo from "../asset/images/logo.png"
+               <img src="logo" alt="my-image" />
 
-2. What is Monalith architecture?
-A. Monalith architecture is like big container, wherein all the software components of an app are assembled and tightly
-   coupled, i.e. each components fully depend on each other.
+2. What would happen if we do console.log(useState())?
+A. As useState() is asynchronous in nature and only called when state changes, but console.log will compiled in 
+   regular fashion and it would return undefined or previous state value since our useState is not intilised.
 
-3. What is diffrence between Monalith and Microservices?
-A. A monalith application is built as a single unified unit while a microservices architecture is a collection of smaller,
-   independent deployable services.
+3. How useEffect will behave if we don't add a dependency array?
+A. If we ignore dependency array then also syntatically it is correct, but it would behave diffrently. As usual, it 
+   would be render one time intially and then on each state change of the any state variable inside app it will also execute. Now, nomore it is binded to any single state variable.
 
-4. Why do we need useEffect hook?
-A. useEffect hook is a tool which help us to interact with outside world but not affect the rendering or performance of 
-   the components that it is in.
+4. What is SPA (Single Page Application) ?
+A. A single page application is a website or web-app that dynamically rewrite the current web page with new data from
+   the web server, instead of the default method of web browser loading the entire new pages.
 
-5. What is optional chaining?
-A. Optional chaining is a process for quering and calling properties, method on an optional that might be null. If the
-   optinal contain value the property or method call succeed, if the optional is null the property or method call return
-   null.
+5. What is diffrence between client side routing and server side routing?
+A. Clent side routing : In cleint side routing the apllication is loaded first time from client server, but wherever we 
+   jump to diffrent menu like about page the brouser again make HTTP request to fetch about page and then re-render the
+   complete application again which inturn require some time and thus this process is expensive as well as time consuming.
 
-6. What is Shimmer UI?
-A. Shimmer is temporary animation placeholder for when a service call takes time to return data and we don't want to block
-   rendering the rest of UI.
-
-7. What is difference between JS statement and JS expression?
-A. An expression is any valid unit of code that resolves to a value wheras statement is a unit of code perform an action.
-
-8. What is conditional rendering? Explain with eaxample.
-A. In React conditional rendering referes to process of delivering elements and componets based on certain conditions.
-   example: 
-      const status = false;
-      {
-         status? <h1>You are active user</h1> : <h1>You are in-active user</h1>
-      }
-
-9. What is CORS?
-A. CORS is mechanism that allow restricted resources on web-page to be requested from another domain outside the domain 
-   from which the first resources was shared.
-
-10. What is async and await?
-A. async keyword before the function make the function return promise where as await keyword are always used inside the
-   async function and make the function pause execution untill resolved promise is returned.
-
-11. What is the use of `const json = await data.json()` in getResturant().
-A. data.json is function on data object that let you extract the json object from the data. This method return promise so
-   you have to wait for json.
+   Server side routing: In server side routing the entire application is loaded in first time and when we navigate to different menu then just content is render not the enire application, and this happen through react router which detect the change in url and and based on configration in render the required components. This makes our apllication fast as well as more optimised.
