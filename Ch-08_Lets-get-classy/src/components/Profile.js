@@ -1,10 +1,12 @@
 import React from 'react';
 import UserInfo, {Avatar} from "./User"
-
+const bio = "I am frontend developer."
+const bio1 = "Being a frontend developer allows me to not only develop client-facing apps and websites but also develop optimized and cutting-edge UI."
 class Profile extends React.Component{
     constructor(props){
         super(props);
         console.log("Parent constructor");
+        
     }
     
     render (){
@@ -13,7 +15,7 @@ class Profile extends React.Component{
             {console.log("Parent render")}
             <h1>This is my Github profile...</h1>
             <Avatar />
-            <UserInfo myintro= "I am React frontend developer."/>
+            <UserInfo myintro={bio} myintronext={bio1}/>
 
             
         </>
@@ -22,10 +24,18 @@ class Profile extends React.Component{
 
     componentDidMount(){
         console.log("Parent didMount");
+        // const timer = setInterval(() => {
+        //     console.log("Timer started");
+        // },1000);
     }
 
     componentDidUpdate() {
         console.log("Parent didUpdate");
+    }
+
+    componentWillUnmount() {
+        // clearInterval(timer);
+        console.log("Component Unmounted");
     }
 
     

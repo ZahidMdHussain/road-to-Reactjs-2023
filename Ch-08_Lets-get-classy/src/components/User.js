@@ -18,8 +18,8 @@ export class Avatar extends React.Component {
         return (
             <>
             <img src={this.state.userProfile.avatar_url} alt="my-avatar" />
-            <h2>This is github name : {this.state.userProfile.name}</h2>
-            <h2>This is github id : {this.state.userProfile.id}</h2>
+            <h2>Username : {this.state.userProfile.name}</h2>
+            <h2>Userid : {this.state.userProfile.id}</h2>
             {console.log("Child 1 Render")}
             </>
         );
@@ -52,6 +52,8 @@ class UserInfo extends React.Component {
             <>
                 <h3>My Bio :</h3>
                 <p>{this.props.myintro}</p>
+                <p>{this.props.myintronext}</p>
+                <a href='https://github.com/ZahidMdHussain'>GitHub</a>
                 {console.log("Child 2 Render")}
             </>
         )
