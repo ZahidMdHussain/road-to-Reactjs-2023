@@ -24,7 +24,7 @@ class Profile extends React.Component{
 
     componentDidMount(){
         console.log("Parent didMount");
-        // const timer = setInterval(() => {
+        // this.timer = setInterval(() => {
         //     console.log("Timer started");
         // },1000);
     }
@@ -34,7 +34,7 @@ class Profile extends React.Component{
     }
 
     componentWillUnmount() {
-        // clearInterval(timer);
+        // clearInterval(this.timer);
         console.log("Component Unmounted");
     }
 

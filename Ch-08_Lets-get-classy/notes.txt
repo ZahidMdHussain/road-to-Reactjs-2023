@@ -1,28 +1,52 @@
-1. What are the various ways to add image into our App? Explain with example.
-A. Thers are 2 ways to add imange:
-   i> Using CDN link : Here we upload image to some server and then use the CDN link in our app to get that image.
-      Synatx: <img src = "some CDN link" alt = "my-image" />
-   
-   ii> Using import : Here we store the image locally into our system and inside our application we import that image
-       and use them. 
-       synatx: import logo from "../asset/images/logo.png"
-               <img src="logo" alt="my-image" />
+1. How do you create nested Routes react-router-dom configration.
+A.       const appRouter = createBrowserRouter([
+         {
+            path : '/',
+            element : <App />,
+            children : [
+                  {
+                     path : '/profile',
+                     element: <Profile />,
+                     children : [
+                        {
+                           path: 'myintro',
+                           element: <Intro />,
+                        }
+                     ]
+                  },
+                  {
+                     path : '/contact',
+                     element: <Contact />
+                  }
+            ]
+         },
+      ])
 
-2. What would happen if we do console.log(useState())?
-A. As useState() is asynchronous in nature and only called when state changes, but console.log will compiled in 
-   regular fashion and it would return undefined or previous state value since our useState is not intilised.
+2. What is order of the life cycle method call in class based components?
+A. There are 5 life cycle state of class components:
+      i>   Constructor
+      ii>  render method
+      iii> componentDidMount
+      iv>  componentDidUpdate
+      v>   componentWillUnmount
 
-3. How useEffect will behave if we don't add a dependency array?
-A. If we ignore dependency array then also syntatically it is correct, but it would behave diffrently. As usual, it 
-   would be render one time intially and then on each state change of the any state variable inside app it will also execute. Now, nomore it is binded to any single state variable.
+3. Why do we use componentDidMount?
+A. Since componentDidMount is called after intial render so we can use this function to call api or update state
+   variable, which will render the UI with updated state. It is same as useEffect hook in functional components.
 
-4. What is SPA (Single Page Application) ?
-A. A single page application is a website or web-app that dynamically rewrite the current web page with new data from
-   the web server, instead of the default method of web browser loading the entire new pages.
+4. Why do we use componentWillUnmounted?  
+A. componentWillUnmount is used to clear the memory associated with the component. Once the component is unloaded,  all
+   variable associated to that component will be cleared.
+   Like if we created interval under componentDidMount then we can clear that interval under componentDidUnmount once that component is unloaded.
 
-5. What is diffrence between client side routing and server side routing?
-A. Clent side routing : In cleint side routing the apllication is loaded first time from client server, but wherever we 
-   jump to diffrent menu like about page the brouser again make HTTP request to fetch about page and then re-render the
-   complete application again which inturn require some time and thus this process is expensive as well as time consuming.
+   Example:
+      componentDidMount(){
+          this.interval = setInterval(() => {
+            console.log("Interval is running");
+         }, 1000);
+      }
 
-   Server side routing: In server side routing the entire application is loaded in first time and when we navigate to different menu then just content is render not the enire application, and this happen through react router which detect the change in url and and based on configration in render the required components. This makes our apllication fast as well as more optimised.
+      componentDidUnmount(){
+         clearInterval(this.interval);
+         console.log("Interval cleared");
+      }

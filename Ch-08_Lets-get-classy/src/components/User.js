@@ -53,7 +53,7 @@ class UserInfo extends React.Component {
                 <h3>My Bio :</h3>
                 <p>{this.props.myintro}</p>
                 <p>{this.props.myintronext}</p>
-                <a href='https://github.com/ZahidMdHussain'>GitHub</a>
+                <a href='https://github.com/ZahidMdHussain' target={"_blanck"}>GitHub</a>
                 {console.log("Child 2 Render")}
             </>
         )
