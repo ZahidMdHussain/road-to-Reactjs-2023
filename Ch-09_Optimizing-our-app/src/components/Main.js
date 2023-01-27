@@ -1,29 +1,11 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './main.css';
-import { img_cdn_path} from '../confiq';
 import { useState, useEffect } from 'react';
 import Shimmer, {NoRestaurant} from './Shimmer';
+import Card from './Card';
 import {Link} from 'react-router-dom';
 import {filterSerachCard} from '../utils/helper';
-
-
-function Card({cloudinaryImageId,name,cuisines,avgRating,deliveryTime,costForTwoString}) {
-    return (
-            <div className='card'>
-                <img src={img_cdn_path+cloudinaryImageId} alt="food_img" />
-                <h3>{name}</h3>
-                <h5 className='cousine'>{cuisines.join(", ")}</h5>   
-                <div className='card-subdivision'>
-                    <p><span>⭐</span>{avgRating}</p>
-                    <p>{deliveryTime} MINS</p>
-                    <p>{costForTwoString}</p>
-                </div>
-                <p className='anchor'><span href="#">QUICK VIEW</span></p>
-            </div>
-    )
-}
-
 
 function Main () {
     const [searchText, setSearchText] = useState("");

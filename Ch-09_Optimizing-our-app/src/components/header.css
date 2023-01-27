@@ -15,7 +15,7 @@
     box-shadow: 0 1px 5px #ccc;
 }
 .header > .logo{
-    background: url(./img/logo.png) no-repeat center center;
+    background: url(../img/logo.png) no-repeat center center;
     width: 155px;
     height: 55px;
     background-size: contain;
