@@ -1,5 +1,7 @@
 export const img_cdn_path = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"
 
+export const RESTURANT_API_CALL ="https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId="
+
 export const dataobj = [
   {
     "type": "restaurant",

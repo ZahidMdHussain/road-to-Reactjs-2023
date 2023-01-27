@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './main.css';
 import { useState, useEffect } from 'react';
 import Shimmer, {NoRestaurant} from './Shimmer';
+// import useAllResturants from "../utils/useAllResturants"
 import Card from './Card';
 import {Link} from 'react-router-dom';
 import {filterSerachCard} from '../utils/helper';
+import useOnline from "../utils/useOnline";
 
 function Main () {
     const [searchText, setSearchText] = useState("");
@@ -13,6 +15,7 @@ function Main () {
     const [allRestaurants, setAllRestaurant] = useState([]);
     
     // intialize useEffect
+
     useEffect(() => {
         getApiData()
     },[])
@@ -23,6 +26,12 @@ function Main () {
         const json = await data.json();
         setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
         setAllRestaurant(json?.data?.cards[2]?.data?.data?.cards);
+    }
+
+
+    const isOnline = useOnline();
+    if (!isOnline){
+        return <h2>🔴It seems your internet connection lost...</h2>
     }
 
     return (!allRestaurants)?null:(
