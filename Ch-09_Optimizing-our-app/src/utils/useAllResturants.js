@@ -1,3 +1,6 @@
+// not being used now due to some bug
+// created for API call under Main.js 
+
 import { useState, useEffect } from "react";
 
 const useAllResturants = () => {
@@ -14,7 +17,6 @@ const useAllResturants = () => {
         const json = await data.json();
         setListRestaurant(json?.data?.cards[2]?.data?.data?.cards);
     }
-    console.log(listresturant)
     return listresturant;
     
 }

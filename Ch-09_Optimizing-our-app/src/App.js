@@ -1,8 +1,7 @@
-import React from 'react';
+import React, {lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './components/Header';
 import Main from './components/Main.js';
-import About from './components/About.js';
 import Footer from './components/Footer.js';
 import Error from './components/Error.js';
 import Contact from './components/Contact';
@@ -10,6 +9,7 @@ import Help from './components/Help';
 import Cart from './components/Cart';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import SelectResturant from './components/SelectResturant';
+const About = lazy(() => import('./components/About'))
 
 
 const App = () => {
@@ -34,7 +34,7 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: '/about',
-                element: <About />
+                element: <Suspense><About /></Suspense>
             },
             {
                 path: '/contact',
@@ -60,4 +60,3 @@ const appRouter = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<RouterProvider router={appRouter} />)
-
