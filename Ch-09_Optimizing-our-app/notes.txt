@@ -1,0 +1,20 @@
+1. When and why do we need lazy()?
+A. When our app are huge and have huge number of components, then to make size of bundler small and keep our app
+   performance fast, we use lazy() to create more than one bundler for our diffrent components or we can say it perform 
+   code-split.
+
+2. What is suspense?
+A. While using lazy loading on components our react fails to render the components on first click, this happen as our
+   new bundler still have not fetched that component javascript file. So, to overcome this we use suspense while providing the components into render function. By doing this react suspend the render until the bundler fetch that jasvascript file.
+   Syntax <Suspense><About /></Suspense>
+
+3. Advantage and disadvantage of using this code splitting pattern?
+A.  Advantage: 
+    > Performamnce of app increases.
+    > Readablity of app increases.
+    > Easier to maintain app.
+
+    Disadvantage:
+    > Development cost increases.
+    > Loading time increases.
+
