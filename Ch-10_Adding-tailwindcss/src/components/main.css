@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap');
+*{
+    box-sizing: border-box;
+}
+.main{
+    background-color: #F4F6F7;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+}
+.sub-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+    
+}
+.sub-head p{
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 1.5rem;
+    color: rgb(133, 130, 130);
+}
+.sub-head input{
+    border: 1px solid #85929E;
+    padding: 8px;
+    width: 200px;
+    border-radius: 8px;
+}
+.sub-head input:focus{
+    outline: none;
+}
+
+
+.serach-btn{
+    padding: .5rem;
+    font-weight: bolder;
+    border-radius: 8px;
+    border: 1px solid #85929E;
+    margin-left:5px;
+}
+
+.serach-btn:hover{
+    background-color: #494f54;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.main >.card-container{
+    background-color: #fff;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top:1rem ;
+    justify-content: center;
+    align-items: center;
+    font-family: 'IBM Plex Serif', serif;
+    box-shadow: 0 1px 3px #ccc;
+    min-height: 500px;
+}
+
+.main >.card-container > .card{
+    margin: 1rem;
+    width: 300px;
+    padding: 1rem 1rem 0 1rem;
+    border: 1px solid #fff;
+    text-decoration: none;
+    color: #000;
+}
+
+.main >.card-container > .card img{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.cousine{
+    padding: .5rem 0;
+}
+
+.card-subdivision{
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    align-items: center;
+    font-size: .8rem;
+    font-weight: 800;
+}
+
+.anchor {
+    width: 100%;
+    text-align: center;
+    font-family: 'Signika Negative', sans-serif;
+
+}
+.anchor span{
+    padding: 1rem 0;
+    text-decoration: none;
+    color:#38a4eb;
+    display: block;
+}
+.anchor span:hover{
+    color:#22dd70;
+    cursor: pointer;
+}
+
+.main >.card-container > .card:hover{
+    border-color: #ccc;
+    box-shadow: 0px 1px 3px 1px #e3dede;
+}
