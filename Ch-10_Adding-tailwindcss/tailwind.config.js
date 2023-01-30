@@ -4,7 +4,14 @@ module.exports = {
     "./src/**/*.{html,js}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      'sans': ['Mukta','ui-sans-serif', 'system-ui']
+    },
+    extend: {
+      backgroundImage: {
+        'logo': "url(./src/img/logo.png)",
+      }
+    },
   },
   plugins: [],
 }
