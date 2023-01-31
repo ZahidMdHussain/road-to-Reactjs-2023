@@ -7,7 +7,7 @@ import logo from "../img/logo.png";
 function Header () {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     return (
-        <div className='flex items-center justify-between py-2 px-6 text-slate-500 text-sm shadow-md bg-slate-100 font-sans font-medium'>
+        <div className='flex items-center justify-between py-4 px-6 text-slate-500 text-lg shadow-md bg-slate-100 font-sans font-medium'>
             <div className='w-36 h-12  bg-center bg-contain bg-no-repeat'>
                 <img className='py-1' src={logo} alt="app-logo" />
             </div>

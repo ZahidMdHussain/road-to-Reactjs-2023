@@ -5,7 +5,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'sans': ['Mukta','ui-sans-serif', 'system-ui']
+      'sans': ['Mukta','ui-sans-serif', 'system-ui'],
+      'fsans': ['Chivo','ui-sans-serif', 'system-ui']
     },
     extend: {
       backgroundImage: {
