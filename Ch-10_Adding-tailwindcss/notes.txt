@@ -1,20 +1,41 @@
-1. When and why do we need lazy()?
-A. When our app are huge and have huge number of components, then to make size of bundler small and keep our app
-   performance fast, we use lazy() to create more than one bundler for our diffrent components or we can say it perform 
-   code-split.
+1. Explore all the ways of writing CSS.
+A.    i. External css
+      ii. SASS/SCSS
+      iii. Inline css
+      iv. Css libraries like material UI, ant, Bootstrap
+      v. tailwindcss
+      vi. styled components
 
-2. What is suspense?
-A. While using lazy loading on components our react fails to render the components on first click, this happen as our
-   new bundler still have not fetched that component javascript file. So, to overcome this we use suspense while providing the components into render function. By doing this react suspend the render until the bundler fetch that jasvascript file.
-   Syntax <Suspense><About /></Suspense>
+2. How do we confiqure tailwind?
+A. i> install tailwind package
+      npm install -D tailwindcss postcss
 
-3. Advantage and disadvantage of using this code splitting pattern?
-A.  Advantage: 
-    > Performamnce of app increases.
-    > Readablity of app increases.
-    > Easier to maintain app.
+   ii> create tailwind.confiq.js
+      npx tailwindcss init
 
-    Disadvantage:
-    > Development cost increases.
-    > Loading time increases.
+   iii> create .postcssrc file and below commands
+         {
+         "plugins": {
+            "tailwindcss": {}
+            }
+         }
 
+   iv> add path to tailwind.confiq.js
+         content: [
+            "./src/**/*.{html,js}",
+         ],
+
+   v> add tailwind directive to index.css file
+         @tailwind base;
+         @tailwind components;
+         @tailwind utilities;
+
+3. In tailwind.confiq.js, what does all the keys means (content, theme, extend, plugins)?
+A. tailwind.confiq.js is a confiquration file that help to style app based on our requrement.
+   content:  will scan all those files and apply css styling to it.
+   theme:  will confiqure the theme of the app like font-family, color, screen-size etc.
+   extends: will confiqure and customize default spacing scale.
+   plugins: let us register new styles for Tailwind to inject into the user’s stylesheet using JavaScript instead of CSS.
+
+4. Why do we have .postcssrc file?
+A. This file is needed to easily compile the tailwindcss classes to normal css snippet using bundler like parcel.
