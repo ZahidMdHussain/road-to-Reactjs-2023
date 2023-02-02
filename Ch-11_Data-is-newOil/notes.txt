@@ -1,0 +1,41 @@
+1. Explore all the ways of writing CSS.
+A.    i. External css
+      ii. SASS/SCSS
+      iii. Inline css
+      iv. Css libraries like material UI, ant, Bootstrap
+      v. tailwindcss
+      vi. styled components
+
+2. How do we confiqure tailwind?
+A. i> install tailwind package
+      npm install -D tailwindcss postcss
+
+   ii> create tailwind.confiq.js
+      npx tailwindcss init
+
+   iii> create .postcssrc file and below commands
+         {
+         "plugins": {
+            "tailwindcss": {}
+            }
+         }
+
+   iv> add path to tailwind.confiq.js
+         content: [
+            "./src/**/*.{html,js}",
+         ],
+
+   v> add tailwind directive to index.css file
+         @tailwind base;
+         @tailwind components;
+         @tailwind utilities;
+
+3. In tailwind.confiq.js, what does all the keys means (content, theme, extend, plugins)?
+A. tailwind.confiq.js is a confiquration file that help to style app based on our requrement.
+   content:  will scan all those files and apply css styling to it.
+   theme:  will confiqure the theme of the app like font-family, color, screen-size etc.
+   extends: will confiqure and customize default spacing scale.
+   plugins: let us register new styles for Tailwind to inject into the user’s stylesheet using JavaScript instead of CSS.
+
+4. Why do we have .postcssrc file?
+A. This file is needed to easily compile the tailwindcss classes to normal css snippet using bundler like parcel.
