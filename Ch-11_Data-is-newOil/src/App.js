@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from 'react';
+import React, {lazy, Suspense, useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './components/Header';
 import Main from './components/Main.js';
@@ -9,15 +9,25 @@ import Help from './components/Help';
 import Cart from './components/Cart';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import SelectResturant from './components/SelectResturant';
+import userContext from './utils/LoginContext';
 const About = lazy(() => import('./components/About'))
 
-
 const App = () => {
+    const [user, setUser] = useState(
+        {
+            username: "hussainmd",
+            email: "md@gmail.com",
+        }
+    );
+
     return (
     <>
+    <userContext.Provider 
+    value={{login:user, setlogin:setUser}}>
         <Header />
         <Outlet />
         <Footer />
+    </userContext.Provider>
     </>
     );
 };

@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import ReactDOM from 'react-dom/client';
 import './main.css';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import Shimmer, {NoRestaurant} from './Shimmer';
+import userContext from '../utils/LoginContext';
 // import useAllResturants from "../utils/useAllResturants"
 import Card from './Card';
+import Login from './Login';
 import {Link} from 'react-router-dom';
 import {filterSerachCard} from '../utils/helper';
 import useOnline from "../utils/useOnline";
@@ -28,6 +30,7 @@ function Main () {
         setAllRestaurant(json?.data?.cards[2]?.data?.data?.cards);
     }
 
+    const {login} = useContext(userContext);
 
     const isOnline = useOnline();
     if (!isOnline){
@@ -38,6 +41,8 @@ function Main () {
         <div className='main'>
             <div className='sub-head'>
                 <p>Top restaurants of day</p>
+                <Login />
+                <h3>{login.username}</h3>
                 <div className='search-conatiner'>
                 <input type="text" className='search-input' placeholder="Search here.." value={searchText} onChange={ (e) => {
                     setSearchText(e.target.value)
