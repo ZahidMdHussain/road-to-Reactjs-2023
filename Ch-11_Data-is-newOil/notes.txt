@@ -1,41 +1,17 @@
-1. Explore all the ways of writing CSS.
-A.    i. External css
-      ii. SASS/SCSS
-      iii. Inline css
-      iv. Css libraries like material UI, ant, Bootstrap
-      v. tailwindcss
-      vi. styled components
+1. What is prop drilling?
+A. Passing of props from parent to child and to its child (nested children) is known as props drilling.
 
-2. How do we confiqure tailwind?
-A. i> install tailwind package
-      npm install -D tailwindcss postcss
+2. What is lifting the state up?
+A. Instead of managing state variable for each children will have single state controllled by parent.
+   This is known as lifting the state up. By applying this now parent have all control over its children.
 
-   ii> create tailwind.confiq.js
-      npx tailwindcss init
+3. What is Context.Provider and Context.Consumer?
+A. Every Context object comes with a Provider react component that allows all decendent components to inherit to 
+   context changes. The Provider component accepts a value prop to be passed to all decendent components of Provider.
+   One Provider can be connected to many consumers.
 
-   iii> create .postcssrc file and below commands
-         {
-         "plugins": {
-            "tailwindcss": {}
-            }
-         }
+   Context.Consumer: A React component that subscribes to context changes. Using this component lets you subscribe
+   to a context within a function component.To apply context to class-based components we use Context.Consumer.
 
-   iv> add path to tailwind.confiq.js
-         content: [
-            "./src/**/*.{html,js}",
-         ],
-
-   v> add tailwind directive to index.css file
-         @tailwind base;
-         @tailwind components;
-         @tailwind utilities;
-
-3. In tailwind.confiq.js, what does all the keys means (content, theme, extend, plugins)?
-A. tailwind.confiq.js is a confiquration file that help to style app based on our requrement.
-   content:  will scan all those files and apply css styling to it.
-   theme:  will confiqure the theme of the app like font-family, color, screen-size etc.
-   extends: will confiqure and customize default spacing scale.
-   plugins: let us register new styles for Tailwind to inject into the user’s stylesheet using JavaScript instead of CSS.
-
-4. Why do we have .postcssrc file?
-A. This file is needed to easily compile the tailwindcss classes to normal css snippet using bundler like parcel.
+4. If we don't pass value to the provider does it take the default value?
+A. No, we need to pass updated value to provider so that it can override the default value. 
