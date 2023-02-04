@@ -15,14 +15,14 @@ const About = lazy(() => import('./components/About'))
 const App = () => {
     const [user, setUser] = useState(
         {
-            username: "hussainmd",
+            username: "",
             email: "md@gmail.com",
         }
     );
 
     return (
     <>
-    <userContext.Provider 
+    <userContext.Provider
     value={{login:user, setlogin:setUser}}>
         <Header />
         <Outlet />
