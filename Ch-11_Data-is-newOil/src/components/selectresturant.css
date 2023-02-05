@@ -43,7 +43,7 @@
 
 .resturant-menu{
     display: flex;
-    justify-content: space-evenly;
+    justify-content:start;
     align-items: center;
     flex-wrap: wrap;
     margin-top: 1rem;
@@ -53,7 +53,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1.5rem 1rem;
+    margin: 1.5rem;
     width: 420px;
     border: 1px solid #ccc;
     border-radius: 8px;

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 function Footer () {
     return (
-        <div className='bg-black flex px-12 py-8 mt-4 justify-evenly text-slate-100 font-fsans'>
+        <div className='bg-black flex px-12 py-8 justify-evenly text-slate-100 font-fsans'>
             <ul className='list-none'>
                 <li className='py-1 font-bold mb-4 text-gray-400'>COMPANY</li>
                 <li className='py-1 hover:cursor-pointer hover:font-semibold hover:text-white'>About us</li>

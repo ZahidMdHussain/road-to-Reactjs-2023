@@ -16,6 +16,18 @@ export const faqs = [
     "title": "Can I change the address / number?",
     "descriptions": "Any major change in delivery address is not possible after you have placed an order with us. However, slight modifications like changing the flat number, street name, landmark etc. are allowed. If you have received delivery executive details, you can directly call him, else you could contact our customer service team.",
   },
+  {
+    "title": "I want to cancel my order?",
+    "descriptions": "We will do our best to accommodate your request if the order is not placed to the restaurant (Customer service number:  080-67466XXX). Please note that we will have a right to charge a cancellation fee up to full order value to compensate our restaurant and delivery partners if your order has been confirmed.",
+  },
+  {
+    "title": "Do you charge for delivery?",
+    "descriptions": "Delivery fee varies from city to city and is applicable if order value is below a certain amount. Additionally, certain restaurants might have fixed delivery fees. Delivery fee (if any) is specified on the 'Review Order' page.",
+  },
+  {
+    "title": "Do you support bulk orders?",
+    "descriptions": "In order to provide all customers with a great selection and to ensure on time delivery of your meal, we reserve the right to limit the quantities depending on supply.",
+  },
 ]
 
 

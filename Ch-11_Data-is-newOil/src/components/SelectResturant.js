@@ -30,19 +30,21 @@ const SelectResturant = () => {
         <h1 className="heading-menu">All menu items</h1>
         <div className="resturant-menu">
             {Object.values(seeResturant?.menu?.items)
-            .slice(0,21).map((item)=> {
+            .map((item)=> {
             return (
-            <div className="each-menu" key={item.id}>
+                item?.cloudinaryImageId &&
+                <div className="each-menu" key={item.id}>
                 <div className="menu-info">
                 <h4>{item.name}</h4>
                 <h5>{item.category}</h5>
                 <h6>InStock - {(item.inStock==1)?"Yes":"No"}</h6>
                 </div>
                 <div className="menu-img">
+                    
                     <img src={img_cdn_path+item.cloudinaryImageId} alt="menu-item-img" />
+                    {console.log(item.cloudinaryImageId)}
                 </div>
-            </div>
-            );
+            </div>);
             })}
         </div>
         </div>

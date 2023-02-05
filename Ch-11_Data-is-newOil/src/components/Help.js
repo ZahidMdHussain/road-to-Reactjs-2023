@@ -6,7 +6,7 @@ const SectionTile = ({title, descp, visible, setVisible, ids}) => {
 return (
     <>
         <div className="py-6 border-b border-gray-400">
-        <div onClick={() => setVisible({id : ids, status: !visible})} className="flex justify-between items-center pr-8 text-slate-600 ease-in duration-300 hover:text-rose-600 hover:cursor-pointer">
+        <div onClick={() => setVisible({id : ids, status: !visible})} className="flex justify-between items-center pr-8 text-slate-500 ease-in duration-300 hover:text-rose-600 hover:cursor-pointer">
         <h2 className= "text-lg">{title}</h2>
         
         { visible ? <SlArrowUp className="text-lg" />
