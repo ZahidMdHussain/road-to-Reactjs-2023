@@ -1,0 +1,145 @@
+*{
+    box-sizing: border-box;
+}
+
+.shimmer-card{
+    margin: 1rem;
+    width: 300px;
+    padding: 1rem ;
+    border: 1px solid #ccc;
+}
+
+.shimmer-img{
+    width: 100%;
+    height: 120px;
+    margin-bottom: 1rem;
+    background-color: #ccc;
+}
+
+.shimmer-name{
+    width: 100%;
+    height: 40px;
+    background-color:#ccc ;
+}
+
+.shimmer-cousine{
+    margin-top: 10px;
+    width: 80%;
+    height: 25px;
+    background-color:#ccc ;
+}
+
+.shimmer-subdivision{
+    width: 100%;
+    height: 40px;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.shimmer-rating,.shimmer-time, .shimmer-cost{
+    width: 20%;
+    height: 25px;
+    background-color: #ccc;
+}
+
+.shimmer-button {
+    margin-top: 10px;
+    width: 100%;
+    height: 45px;
+    background-color: #ccc;
+
+}
+
+.noRestaurant{
+    color: #ccc;
+
+}
+
+.shimmer-body{
+    background-color: #fff;
+    padding: 0 1.5rem 1rem;
+    margin:2rem 1rem ;
+    box-shadow: 0 1px 3px #ccc;
+    min-height: 500px;
+    border-radius: 8px;
+}
+
+.resturants-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.resturants-heading > .info{
+    margin-left: 1rem;
+}
+.resturants-heading > .info > *{
+    margin: .8rem;
+    background-color: #ccc;
+}
+.resturants-heading > .info > .text-1{
+    width: 350px;
+    height: 35px;
+}
+.resturants-heading > .info > .text-2{
+    width: 250px;
+    height: 26px;
+}
+.resturants-heading > .info > .text-3{
+    width: 120px;
+    height: 20px;
+}
+.resturants-heading > .info > .text-4{
+    width: 100px;
+    height: 18px;
+}
+.resturants-heading > .image > .img{
+    margin-right: 1.2rem;
+    width: 350px;
+    height: 200px;
+    background-color: #ccc;
+}
+.reataurants-menu{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.shimmer-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem 1rem;
+    width: 420px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+}
+.shimmer-menu > .each-menus > *{
+    margin: .5rem .4rem;
+    background-color: #ccc;
+}
+.each-menus > .text-x{
+    width: 250px;
+    height: 15px;  
+}
+.each-menus > .text-y{
+    width: 150px;
+    height: 12px;  
+}
+.each-menus > .text-z{
+    width: 100px;
+    height: 10px;  
+}
+.shimmer-menu > .menu-images{
+    width: 100px;
+    height: 70px;
+    background-color: #ccc;
+}
