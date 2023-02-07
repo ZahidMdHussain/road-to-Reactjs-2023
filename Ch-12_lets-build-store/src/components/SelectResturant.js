@@ -47,12 +47,11 @@ const SelectResturant = () => {
                 <h6>FoodType {(item.isVeg==1?"Veg":"Non-Veg")}</h6>
                 <h6>InStock - {(item.inStock==1)?"Yes":"No"}</h6>
                 <h6>Price - {item.price/100}</h6>
-                {console.log(item)}
                 </div>
                 <div className="menu-img flex flex-col">
                     
                     <img src={img_cdn_path+item.cloudinaryImageId} alt="menu-item-img" />
-                    <button className="bg-green-500 py-2 px-4 mx-auto rounded-md mt-3 text-sm text-white font-bold" onClick={item => addtoCart(item)}>ADD</button>
+                    <button className="bg-green-500 py-2 px-4 mx-auto rounded-md mt-3 text-sm text-white font-bold" onClick={() => addtoCart(item)}>ADD</button>
                 </div>
             </div>);
             })}
