@@ -4,12 +4,19 @@ import {useState, useEffect} from "react";
 import { img_cdn_path } from "../confiq";
 import {ResturantShimmer} from "./Shimmer";
 import useResturant from "../utils/useResturant";
+import { additem } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
 import "./selectresturant.css";
 
 const SelectResturant = () => {
 
     const {id} = useParams();
     const seeResturant = useResturant(id);
+    const dispatch = useDispatch()
+
+    const addtoCart = (item) => {
+        dispatch(additem(item));
+    }
     
     return (!seeResturant)?<ResturantShimmer />:(
     <>
@@ -37,12 +44,15 @@ const SelectResturant = () => {
                 <div className="menu-info">
                 <h4>{item.name}</h4>
                 <h5>{item.category}</h5>
+                <h6>FoodType {(item.isVeg==1?"Veg":"Non-Veg")}</h6>
                 <h6>InStock - {(item.inStock==1)?"Yes":"No"}</h6>
+                <h6>Price - {item.price/100}</h6>
+                {console.log(item)}
                 </div>
-                <div className="menu-img">
+                <div className="menu-img flex flex-col">
                     
                     <img src={img_cdn_path+item.cloudinaryImageId} alt="menu-item-img" />
-                    {console.log(item.cloudinaryImageId)}
+                    <button className="bg-green-500 py-2 px-4 mx-auto rounded-md mt-3 text-sm text-white font-bold" onClick={item => addtoCart(item)}>ADD</button>
                 </div>
             </div>);
             })}
