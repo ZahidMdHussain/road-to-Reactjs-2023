@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom/client';
 import {Link} from "react-router-dom";
 import logo from "../img/logo.png";
 import userContext from "../utils/LoginContext";
+import { useSelector } from 'react-redux';
 
 
 function Header () {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const {login} = useContext(userContext);
+
+    const cartItems = useSelector(store => store.cart.items);
 
     return (
         <div className='flex items-center justify-between py-4 px-6 text-slate-500 text-lg shadow-md bg-slate-100 font-sans font-medium'>
@@ -30,7 +33,7 @@ function Header () {
                     <Link className='hover:text-pink-600 outline-none duration-500 hover:underline hover:underline-offset-4 hover:ease-in-out focus:outline-none' to="/help">Help</Link>
                     </li>
                     <li className='px-4 '>
-                    <Link className='hover:text-pink-600 outline-none duration-300 hover:underline hover:underline-offset-4 hover:ease-in-out focus:outline-none' to="/cart">Cart</Link>
+                    <Link className='hover:text-pink-600 outline-none duration-300 hover:underline hover:underline-offset-4 hover:ease-in-out focus:outline-none' to="/cart">Cart {cartItems.length}</Link>
                     </li>
                 </ul>
             </div>
