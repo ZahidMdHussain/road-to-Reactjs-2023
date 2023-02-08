@@ -33,7 +33,7 @@ function Header () {
                     <Link className='hover:text-pink-600 outline-none duration-500 hover:underline hover:underline-offset-4 hover:ease-in-out focus:outline-none' to="/help">Help</Link>
                     </li>
                     <li className='px-4 '>
-                    <Link className='hover:text-pink-600 outline-none duration-300 hover:underline hover:underline-offset-4 hover:ease-in-out focus:outline-none' to="/cart">Cart {cartItems.length}</Link>
+                    <Link className='hover:text-pink-600 outline-none duration-300 hover:underline hover:underline-offset-4 hover:ease-in-out focus:outline-none' to="/cart">Cart <span className="bg-[#60b246] px-[4] text-xs font-bold text-white align-top">{cartItems.length}</span></Link>
                     </li>
                 </ul>
             </div>

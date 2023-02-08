@@ -6,6 +6,7 @@ import {ResturantShimmer} from "./Shimmer";
 import useResturant from "../utils/useResturant";
 import { additem } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
+import { AiFillStar } from "react-icons/ai";
 import "./selectresturant.css";
 
 const SelectResturant = () => {
@@ -28,7 +29,8 @@ const SelectResturant = () => {
             <h3>{seeResturant?.cuisines.join(", ")}</h3>
             <h3>{seeResturant?.area}, {seeResturant?.city}</h3>
             <h4>{seeResturant?.costForTwoMsg}</h4>
-            <h4>⭐ {seeResturant?.avgRating}</h4>
+            <p className={`flex items-center w-fit px-2 font-bold ${+seeResturant?.avgRating >= 4 ? 'bg-[#48c479]' : 'bg-[#db7c38]'} text-white`}><span className='align-baseline'><AiFillStar className='inline' /></span>
+                    <span className='align-baseline pl-1'>{seeResturant?.avgRating}</span></p>
             </div>
             <div className="resturant-img">
                 <img src={img_cdn_path+seeResturant?.cloudinaryImageId} alt="resturant-image" />
@@ -51,7 +53,7 @@ const SelectResturant = () => {
                 <div className="menu-img flex flex-col">
                     
                     <img src={img_cdn_path+item.cloudinaryImageId} alt="menu-item-img" />
-                    <button className="bg-green-500 py-2 px-4 mx-auto rounded-md mt-3 text-sm text-white font-bold" onClick={() => addtoCart(item)}>ADD</button>
+                    <button className="bg-[#60b246] py-2 px-4 mx-auto rounded-md mt-3 text-sm text-white font-bold" onClick={() => addtoCart(item)}>ADD</button>
                 </div>
             </div>);
             })}
