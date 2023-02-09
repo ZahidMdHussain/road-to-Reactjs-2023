@@ -1,7 +1,6 @@
 import React, {useState, useContext, useEffect} from 'react';
 import ReactDOM from 'react-dom/client';
 import './main.css';
-// import { useState, useEffect } from 'react';
 import Shimmer, {NoRestaurant} from './Shimmer';
 import userContext from '../utils/LoginContext';
 // import useAllResturants from "../utils/useAllResturants"
