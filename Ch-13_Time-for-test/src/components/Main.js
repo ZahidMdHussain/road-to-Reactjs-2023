@@ -34,15 +34,11 @@ function Main() {
   const { login } = useContext(userContext);
 
   const isOnline = useOnline();
-  if (!isOnline) {
-    return (
-      <h2 data-testid="checkOnline">
-        🔴It seems your internet connection lost...
-      </h2>
-    );
-  }
-
-  return !allRestaurants ? null : (
+  return !isOnline ? (
+    <h2 data-testid="checkOnline">
+      🔴It seems your internet connection lost...
+    </h2>
+  ) : !allRestaurants ? null : (
     <div className="main">
       <div className="sub-head">
         <p>Top restaurants of day</p>
@@ -50,6 +46,7 @@ function Main() {
         <h3>{login.username}</h3>
         <div className="search-conatiner">
           <input
+            data-testid="searchInput"
             type="text"
             className="search-input"
             placeholder="Search here.."
@@ -73,23 +70,25 @@ function Main() {
           </button>
         </div>
       </div>
-      <div className="card-container">
+      <div className="card-container-parent">
         {allRestaurants.length === 0 ? (
           <Shimmer />
         ) : filteredRestaurants.length === 0 ? (
           <NoRestaurant />
         ) : (
-          filteredRestaurants.map((each_resturant) => {
-            return (
-              <Link
-                className="card"
-                to={"/restaurants/" + each_resturant?.data?.id}
-                key={each_resturant?.data?.id}
-              >
-                <Card {...each_resturant?.data} />
-              </Link>
-            );
-          })
+          <div data-testid="resturantLists" className="card-container">
+            {filteredRestaurants.map((each_resturant) => {
+              return (
+                <Link
+                  className="card"
+                  to={"/restaurants/" + each_resturant?.data?.id}
+                  key={each_resturant?.data?.id}
+                >
+                  <Card {...each_resturant?.data} />
+                </Link>
+              );
+            })}
+          </div>
         )}
       </div>
     </div>

@@ -46,7 +46,20 @@
     cursor: pointer;
 }
 
-.main >.card-container{
+.card-container-parent{
+    background-color: #fff;
+    /* padding: 1rem 1.5rem; */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    margin-top:1rem ;
+    justify-content: start;
+    align-items: center;
+    font-family: 'IBM Plex Serif', serif;
+    /* box-shadow: 0 1px 3px #ccc; */
+    min-height: 500px;
+}
+
+.card-container{
     background-color: #fff;
     padding: 1rem 1.5rem;
     display: flex;
@@ -59,7 +72,7 @@
     min-height: 500px;
 }
 
-.main >.card-container > .card{
+.card-container > .card{
     margin: 1rem 1.5rem;
     width: 300px;
     padding: 1rem 1rem 0 1rem;
@@ -68,7 +81,7 @@
     color: #000;
 }
 
-.main >.card-container > .card img{
+.card-container > .card img{
     width: 100%;
     margin-bottom: 1rem;
 }
@@ -104,7 +117,7 @@
     cursor: pointer;
 }
 
-.main >.card-container > .card:hover{
+.card-container > .card:hover{
     border-color: #ccc;
     box-shadow: 0px 1px 3px 1px #e3dede;
 }
