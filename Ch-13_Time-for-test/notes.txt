@@ -1,0 +1,30 @@
+1. What are differnt type of testing?
+A. > Manual testing
+   > Antomation testing
+   > End to End testing
+   > Unit testing
+   > Integration testing
+
+2. What is Enzyme?
+A. Enzyme is a javascript testing utility that makes it easier to assert, manipulate and traverse
+   your react component output.
+
+3. Enzyme vs React testing library.
+A. Major difference are :
+    1. Conceptual : In enzyme we are testing using state and props of the components.
+                    where as in using react testing library we test the components from user's prespective like how user would interact with our application.
+
+    2. Shallow and deep rendring : In react testing libarary we test using the DOM, so there is 
+                    now shallow or deep rendring, But in Enzyme shallow and deep rendring are present.
+
+            Shallow > Shallow rendring enables us to that we are not asserting our test based on 
+                behaviour of any child components of the compoents we are testing.
+            
+           deep > Enzyme provide us us with full rendring of DOM elements. It is usefull where 
+                we want to test the components wrapped inside higher order components.
+
+4. What is Jest and why do we use it?
+A. Jest is a JavaScript testing framework designed to ensure correctness of any JavaScript codebase. 
+   It allows you to write tests with an approachable, familiar and feature-rich API that gives you results quickly.
+
+
