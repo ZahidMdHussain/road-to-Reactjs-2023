@@ -1,0 +1,34 @@
+1. Difference between useContext and Redux?
+A. useContext is a hook that provide the way to pass data through the component tree without manually passing props down 
+   though each nested components.
+   Redux is state management library, which manage the state and data of your applications.
+
+   useContext make changes using context value 
+   Redux make changes using pure function i.e Reducers.
+
+   useContext is better to be use with small applications
+   Redux is perfect for large applications.
+
+2. Advantage of using Redux toolkit over Redux.
+A. Redux toolkit solve 3 common concern about Redux.
+    > Configuring Redux store is too complicated.
+    > We have to add lot's of package to get Redux to do something useful.
+    > Redux require too much boilerplate code.
+
+3. Explain despatcher?
+A. Despatcher is action which is when added to any UI element, then on UI action despatcher is triggerd which inturn calls
+   the reducer function of redux.
+
+4. Explain Reducer?
+A. Reducer is a redux function which update the slice of redux store. 
+
+5. Explain Slice?
+A. Slice are like small container inside the store, these slice perform specific functionality when reducer function 
+   is triggered.
+
+6. Explain Selector?
+A. Selector is hook that use to subscribe our UI element to store so that we can reflect the state management into 
+   our apps. useSelector is hook which ct as brige between store and UI elements.
+
+7. Explain createSlice and configuration it takes.
+A. 
