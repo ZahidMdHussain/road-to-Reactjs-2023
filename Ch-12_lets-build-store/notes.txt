@@ -1,7 +1,7 @@
 1. Difference between useContext and Redux?
 A. useContext is a hook that provide the way to pass data through the component tree without manually passing props down 
    though each nested components.
-   Redux is state management library, which manage the state and data of your applications.
+   Redux is state management library, which manage the state and data of our applications.
 
    useContext make changes using context value 
    Redux make changes using pure function i.e Reducers.
@@ -16,7 +16,7 @@ A. Redux toolkit solve 3 common concern about Redux.
     > Redux require too much boilerplate code.
 
 3. Explain despatcher?
-A. Despatcher is action which is when added to any UI element, then on UI action despatcher is triggerd which inturn calls
+A. Despatcher is action which is when added to any UI element, then on UI action, despatcher is triggerd which inturn calls
    the reducer function of redux.
 
 4. Explain Reducer?
@@ -28,7 +28,30 @@ A. Slice are like small container inside the store, these slice perform specific
 
 6. Explain Selector?
 A. Selector is hook that use to subscribe our UI element to store so that we can reflect the state management into 
-   our apps. useSelector is hook which ct as brige between store and UI elements.
+   our apps. useSelector is hook which act as bridge between store and UI elements.
 
 7. Explain createSlice and configuration it takes.
-A. 
+A.  > We create slice using createSlice function which comes from redux toolkit.
+    > create Slice takes into 3 values name, initialState and reducers.
+    > reducers is a object that will conatins action and reducer function corresponding to that action.
+    > At end will export all our action as named export from cartSlice.action.
+    > Also, will export reducer from cartSlice.reducer
+
+    Exapmple:
+
+        import {createSlice} from "@reduxjs/toolkit"
+
+        const cartSlice = createSlice({
+            name: "Cart,
+            initialState: {
+                items: []
+            },
+            reducers: {
+                addItems: (state, action) => {
+                    state.items.push(action.pyload)
+                },
+            }
+        })
+
+        export {addItems} from cartSlice.actions
+        export default cartSlice.reducer
