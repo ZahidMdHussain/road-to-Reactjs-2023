@@ -7,6 +7,7 @@ import Error from "./components/Error.js";
 // import Contact from "./components/Contact";
 import Help from "./components/Help";
 import Cart from "./components/Cart";
+import Login from "./components/Login";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import SelectResturant from "./components/SelectResturant";
 import userContext from "./utils/LoginContext";
@@ -56,6 +57,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
       {
         path: "restaurants/:id",

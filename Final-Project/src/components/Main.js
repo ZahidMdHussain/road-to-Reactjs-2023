@@ -41,8 +41,8 @@ function Main() {
     <div className="main">
       <div className="sub-head">
         <p>Top restaurants of day</p>
-        <Login />
-        <h3>{login.username}</h3>
+        {/* <Login />
+        <h3>{login.username}</h3> */}
         <div className="search-conatiner">
           <input
             data-testid="searchInput"

@@ -62,25 +62,28 @@ function Header() {
         </ul>
       </div>
       <div>
-        <h2>{login.username}</h2>
+        {/* <h2>{login.username}</h2> */}
         {isLoggedIn ? (
           <button
-            className="px-1 py-[8px] w-16 duration-300 rounded-md hover:shadow-md hover:shadow-slate-400 hover:ease-in-out"
+            className="px-1 py-[8px] w-fit duration-300 rounded-md hover:shadow-md hover:shadow-slate-400 hover:ease-in-out"
             onClick={() => {
               setIsLoggedIn(false);
             }}
           >
-            LogOut
+            Hi!&nbsp;{login.username}
           </button>
         ) : (
-          <button
-            className="text-[#ff4057] px-1 py-[8px] w-16 duration-300 rounded-md hover:shadow-md hover:shadow-[#ff4057] hover:ease-in-out"
-            onClick={() => {
-              setIsLoggedIn(true);
-            }}
-          >
-            LogIn{" "}
-          </button>
+          <Link to="/login">
+            <button
+              className="text-[#ff4057] px-1 py-[8px] w-16 duration-300 rounded-md hover:shadow-md hover:shadow-[#ff4057] hover:ease-in-out"
+              onClick={() => {
+                setIsLoggedIn(true);
+              }}
+            >
+              LogIn
+              {(login.username = "")}
+            </button>
+          </Link>
         )}
       </div>
     </div>
