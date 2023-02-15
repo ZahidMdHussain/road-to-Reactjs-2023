@@ -14,9 +14,11 @@ function Header() {
 
   return (
     <div className="flex items-center justify-between py-4 px-6 text-slate-500 text-lg shadow-md bg-slate-100 font-sans font-medium">
-      <div className="w-36 h-12  bg-center bg-contain bg-no-repeat">
-        <img data-testid="logo" className="py-1" src={logo} alt="app-logo" />
-      </div>
+      <Link to="/">
+        <div className="w-36 h-12  bg-center bg-contain bg-no-repeat">
+          <img data-testid="logo" className="py-1" src={logo} alt="app-logo" />
+        </div>
+      </Link>
       <div className="flex items-center">
         <ul className="flex list-none">
           <li className="px-2">
@@ -65,17 +67,19 @@ function Header() {
         {/* <h2>{login.username}</h2> */}
         {isLoggedIn ? (
           <button
-            className="px-1 py-[8px] w-fit duration-300 rounded-md hover:shadow-md hover:shadow-slate-400 hover:ease-in-out"
+            className="text-[#60b246] shadow-sm shadow-[#60b246] px-1 py-[8px] w-fit duration-300 rounded-md hover:shadow-md hover:shadow-[#60b246] hover:ease-in-out"
             onClick={() => {
               setIsLoggedIn(false);
             }}
           >
-            Hi!&nbsp;{login.username.substring(0, 4)}
+            {login.username.length === 0
+              ? "Hi! Ghost"
+              : "Hi! " + login.username.substring(0, 5)}
           </button>
         ) : (
           <Link to="/login">
             <button
-              className="text-[#ff4057] px-1 py-[8px] w-16 duration-300 rounded-md hover:shadow-md hover:shadow-[#ff4057] hover:ease-in-out"
+              className="text-[#ff4057] shadow-sm shadow-[#ff4057] px-1 py-[8px] w-16 duration-300 rounded-md hover:shadow-md hover:shadow-[#ff4057] hover:ease-in-out"
               onClick={() => {
                 setIsLoggedIn(true);
               }}

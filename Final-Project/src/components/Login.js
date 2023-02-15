@@ -1,96 +1,68 @@
 import { useContext } from "react";
 import userContext from "../utils/LoginContext";
 import { Link } from "react-router-dom";
-// import { useFormik } from "formik";
-// import { LogInSchema } from "./schemas/LoginSchema";
-
-const initialValues = {
-  name: "",
-  email: "",
-};
+import login_img from "../img/login.jpg";
 
 const Login = () => {
-  // const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
-  //   useFormik({
-  //     initialValues: initialValues,
-  //     validationSchema: LogInSchema,
-  //     onSubmit: (values, action) => {
-  //       console.log(values);
-  //       setlogin({
-  //         username: values.name,
-  //         email: values.email,
-  //       });
-  //       action.resetForm();
-  //     },
-  //   });
-
   const { login, setlogin } = useContext(userContext);
 
   return (
     <>
-      <div className="h-[60vh] flex justify-center items-center bg-slate-300">
-        <form className="border border-gray-600 p-5">
-          <div className="my-2">
-            <input
-              onChange={(e) => {
-                setlogin({
-                  username: e.target.value,
-                });
-              }}
-              className=""
-              type="text"
-              name="name"
-              placeholder="Firstname"
-            />
+      <div className="min-h-[60vh] flex justify-center items-center bg-[#0569c1]">
+        <div className="bg-[#f4f9fd] max-w-[60vw] grid grid-flow-col grid-cols-9">
+          <div className="col-span-5 p-4 flex flex-col justify-center items-center font-fsans">
+            <h2 className="text-2xl font-bold my-4">Log In</h2>
+            <form className=" py-5 w-full text-center">
+              <div className="my-4">
+                <input
+                  className="px-4 py-2 text-base border w-2/3 rounded-full focus:outline focus:outline-blue-400"
+                  onChange={(e) => {
+                    setlogin({
+                      username: e.target.value,
+                    });
+                  }}
+                  type="text"
+                  name="name"
+                  placeholder="Firstname"
+                />
+              </div>
+              <div className="my-4">
+                <input
+                  className="px-4 py-2 text-base border w-2/3 rounded-full focus:outline focus:outline-blue-400"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                />
+              </div>
+              <div
+                className="outline-none border-transparent focus:border-transparent focus:ring-0"
+                type="submit"
+              >
+                <Link
+                  className="border-transparent focus:border-transparent focus:ring-0"
+                  to="/"
+                >
+                  <button
+                    className="px-4 py-2 text-lg border-0 w-2/3 rounded-full bg-[#0569c1] text-white outline-0 focus:outline border-transparent focus:border-transparent focus:ring-0"
+                    type="submit"
+                  >
+                    LogIn
+                  </button>
+                </Link>
+              </div>
+              <p className="mt-7 text-xs font-thin text-slate-400">
+                Don't have an account?{" "}
+                <span className="text-blue-500">Register</span>
+              </p>
+            </form>
           </div>
-          <div className="my-2">
-            <input className="" type="email" name="email" placeholder="Email" />
+          <div className="bg-[#ffffff] col-span-4 flex items-center">
+            <img src={login_img} alt="login_banner" />
           </div>
-          <div className="bg-yellow-400" type="submit">
-            <Link to="/">
-              <button type="submit">Submit</button>
-            </Link>
-          </div>
-        </form>
+        </div>
       </div>
     </>
   );
 };
-
-{
-  /* <div className="h-[60vh] flex justify-center items-center bg-slate-300">
-        <form onSubmit={handleSubmit} className="border border-gray-600 p-5">
-          <div className="my-2">
-            <input
-              className=""
-              type="text"
-              name="name"
-              placeholder="Firstname"
-              values={values.name}
-              onBlur={handleBlur}
-              onChange={handleChange}
-            />
-            {errors.name && touched.name ? <p>{errors.name}</p> : null}
-          </div>
-          <div className="my-2">
-            <input
-              className=""
-              type="email"
-              name="email"
-              placeholder="Email"
-              values={values.email}
-              onBlur={handleBlur}
-              onChange={handleChange}
-            />
-            {errors.email && touched.email ? <p>{errors.email}</p> : null}
-          </div>
-          <div className="bg-yellow-400" type="submit">
-            {/* <Link to="/">
-            <button type="submit">Submit</button>
-            {/* </Link>
-          </div>
-        </form>
-      </div> */
-}
 
 export default Login;
