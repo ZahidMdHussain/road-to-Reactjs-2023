@@ -7,21 +7,23 @@ const Login = () => {
   return (
     <>
       <div>
-        <input
-          onChange={(e) => {
-            setlogin({
-              username: e.target.value,
-            });
-          }}
-          className=""
-          type="text"
-          name="login"
-          placeholder="Username"
-        />
+        <div>
+          <input
+            onChange={(e) => {
+              setlogin({
+                username: e.target.value,
+              });
+            }}
+            className=""
+            type="text"
+            name="login"
+            placeholder="Username"
+          />
+        </div>
+        <Link to="/">
+          <button>Submit</button>
+        </Link>
       </div>
-      <Link to="/">
-        <button>Submit</button>
-      </Link>
     </>
   );
 };

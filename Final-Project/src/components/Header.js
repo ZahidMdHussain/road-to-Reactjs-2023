@@ -70,7 +70,7 @@ function Header() {
               setIsLoggedIn(false);
             }}
           >
-            Hi!&nbsp;{login.username}
+            Hi!&nbsp;{login.username.substring(0, 4)}
           </button>
         ) : (
           <Link to="/login">

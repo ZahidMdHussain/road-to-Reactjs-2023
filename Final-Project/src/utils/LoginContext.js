@@ -1,12 +1,10 @@
 import { createContext } from "react";
 
 const userContext = createContext({
-    login: {
-    username: "-name",
-    email: "no-email",
-    }
+  login: {
+    username: "",
+    email: "",
+  },
 });
 
 export default userContext;
-
-
