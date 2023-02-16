@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import Main from "./components/Main.js";
 import Footer from "./components/Footer.js";
 import Error from "./components/Error.js";
-// import Contact from "./components/Contact";
 import Help from "./components/Help";
 import Cart from "./components/Cart";
 import Login from "./components/Login";

@@ -5,6 +5,7 @@ module.exports = {
     fontFamily: {
       sans: ["Mukta", "ui-sans-serif", "system-ui"],
       fsans: ["Chivo", "ui-sans-serif", "system-ui"],
+      bserif: ["IBM Plex Serif", "serif"],
     },
     extend: {
       backgroundImage: {

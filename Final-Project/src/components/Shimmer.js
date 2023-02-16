@@ -1,7 +1,13 @@
 import "./shimmer.css";
 
 export const NoRestaurant = () => {
-  return <h1 className="noRestaurant">Searched Restaurant Not Found..</h1>;
+  return (
+    <div className="flex justify-center items-center w-full">
+      <h1 className="text-2xl font-bold text-slate-400">
+        ⛔ Searched Restaurant Not Found..
+      </h1>
+    </div>
+  );
 };
 
 //Add css gto it
@@ -72,7 +78,7 @@ const Shimmer = () => {
   return (
     <>
       <div
-        className="flex justify-center items-center"
+        className="flex justify-center items-center mx-8"
         data-testid="shimmer-ui"
       >
         <ShimmerCard />
