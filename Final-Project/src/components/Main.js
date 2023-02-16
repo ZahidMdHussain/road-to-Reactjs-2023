@@ -52,7 +52,7 @@ function Main() {
             }}
           />
           <button
-            className="p-2 border rounded-lg border-[#85929E] ml-1 font-semibold hover:bg-[#60b246] hover:text-white hover:cursor-pointer hover:shadow-md"
+            className="p-2 border rounded-lg border-[#85929E] ml-1 font-semibold hover:bg-[#60b246] hover:text-white hover:cursor-pointer hover:shadow-md ease-in-out duration-300"
             data-testid="checkSearch"
             onClick={() => {
               const filteredRestaurants = filterSerachCard(
@@ -66,7 +66,7 @@ function Main() {
           </button>
         </div>
       </div>
-      <div className="bg-white mt-4 flex justify-start items-center min-h-[500px] font-bserif">
+      <div className="bg-white mt-4 flex justify-start items-center min-h-[500px] font-bserif shadow-lg rounded-md shadow-slate-400">
         {allRestaurants.length === 0 ? (
           <Shimmer />
         ) : filteredRestaurants.length === 0 ? (

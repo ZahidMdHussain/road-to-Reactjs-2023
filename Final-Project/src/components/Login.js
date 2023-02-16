@@ -8,14 +8,14 @@ const Login = () => {
 
   return (
     <>
-      <div className="min-h-[60vh] flex justify-center items-center bg-[#0569c1]">
+      <div className="min-h-[60vh] flex justify-center items-center bg-[#0e7490]">
         <div className="bg-[#f4f9fd] max-w-[60vw] grid grid-flow-col grid-cols-9">
           <div className="col-span-5 p-4 flex flex-col justify-center items-center font-fsans">
-            <h2 className="text-2xl font-bold my-4">Log In</h2>
+            <h2 className="text-2xl font-bold my-4 text-[#0e7490]">Log In</h2>
             <form className=" py-5 w-full text-center">
               <div className="my-4">
                 <input
-                  className="px-4 py-2 text-base border w-2/3 rounded-full focus:outline focus:outline-blue-400"
+                  className="px-4 py-2 text-base border w-2/3 rounded-full focus:outline focus:outline-[#0e7490]"
                   onChange={(e) => {
                     setlogin({
                       username: e.target.value,
@@ -28,7 +28,7 @@ const Login = () => {
               </div>
               <div className="my-4">
                 <input
-                  className="px-4 py-2 text-base border w-2/3 rounded-full focus:outline focus:outline-blue-400"
+                  className="px-4 py-2 text-base border w-2/3 rounded-full focus:outline focus:outline-[#0e7490]"
                   type="email"
                   name="email"
                   placeholder="Email"
@@ -43,7 +43,7 @@ const Login = () => {
                   to="/"
                 >
                   <button
-                    className="px-4 py-2 text-lg border-0 w-2/3 rounded-full bg-[#0569c1] text-white outline-0 focus:outline border-transparent focus:border-transparent focus:ring-0"
+                    className="px-4 py-2 text-lg border-0 w-2/3 rounded-full bg-[#0e7490] text-white outline-0 focus:outline border-transparent focus:border-transparent focus:ring-0 hover:bg-[#105467]"
                     type="submit"
                   >
                     LogIn
@@ -52,7 +52,7 @@ const Login = () => {
               </div>
               <p className="mt-7 text-xs font-thin text-slate-400">
                 Don't have an account?{" "}
-                <span className="text-blue-500">Register</span>
+                <span className="text-[#0e7490]">Register</span>
               </p>
             </form>
           </div>
