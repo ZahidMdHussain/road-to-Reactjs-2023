@@ -1,7 +1,14 @@
 import "./App.css";
+import Header from "./components/Header";
+import Main from "./components/Main";
 
 function App() {
-  return <h1 className="text-red-500 ">Video Streaming App</h1>;
+  return (
+    <>
+      <Header />
+      <Main />
+    </>
+  );
 }
 
 export default App;
