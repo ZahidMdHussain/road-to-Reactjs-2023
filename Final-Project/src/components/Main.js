@@ -4,6 +4,7 @@ import Card from "./Card";
 import { Link } from "react-router-dom";
 import { filterSerachCard } from "../utils/helper";
 import useOnline from "../utils/useOnline";
+import { RESTURANT_API } from "../confiq";
 
 function Main() {
   const [searchText, setSearchText] = useState("");
@@ -18,9 +19,7 @@ function Main() {
 
   // api call functions
   async function getApiData() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(RESTURANT_API);
     const json = await data.json();
     setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
     setAllRestaurant(json?.data?.cards[2]?.data?.data?.cards);
