@@ -1,6 +1,20 @@
 import home from "../assets/img/home.png";
 import shorts from "../assets/img/shorts.png";
 import subscribe from "../assets/img/subscribe.png";
+import library from "../assets/img/video-library.png";
+import history from "../assets/img/history.png";
+import myvideo from "../assets/img/play.png";
+import watch from "../assets/img/clock.png";
+import liked from "../assets/img/like.png";
+import trend from "../assets/img/trending-topic.png";
+import shop from "../assets/img/bag.png";
+import music from "../assets/img/music-note.png";
+import movie from "../assets/img/clapperboard.png";
+import game from "../assets/img/console.png";
+import news from "../assets/img/newspaper-folded.png";
+import learn from "../assets/img/knowledge.png";
+import sport from "../assets/img/trophy.png";
+
 export const sidemenuSectionOne = [
   {
     menuId: 1,
@@ -22,27 +36,27 @@ export const sidemenuSectionOne = [
 export const sidemenuSectionTwo = [
   {
     menuId: 4,
-    img: home,
+    img: library,
     text: "Library",
   },
   {
     menuId: 5,
-    img: shorts,
+    img: history,
     text: "History",
   },
   {
     menuId: 6,
-    img: subscribe,
+    img: myvideo,
     text: "Your videos",
   },
   {
     menuId: 7,
-    img: subscribe,
+    img: watch,
     text: "Watch later",
   },
   {
     menuId: 8,
-    img: subscribe,
+    img: liked,
     text: "Liked videos",
   },
 ];
@@ -50,42 +64,42 @@ export const sidemenuSectionTwo = [
 export const sidemenuSectionThree = [
   {
     menuId: 9,
-    img: home,
+    img: trend,
     text: "Trending",
   },
   {
     menuId: 10,
-    img: shorts,
+    img: shop,
     text: "Shopping",
   },
   {
     menuId: 11,
-    img: subscribe,
+    img: music,
     text: "Music",
   },
   {
     menuId: 12,
-    img: subscribe,
+    img: movie,
     text: "Movies",
   },
   {
     menuId: 13,
-    img: subscribe,
+    img: game,
     text: "Gaming",
   },
   {
     menuId: 14,
-    img: subscribe,
+    img: news,
     text: "News",
   },
   {
     menuId: 15,
-    img: subscribe,
+    img: learn,
     text: "Learning",
   },
   {
     menuId: 16,
-    img: subscribe,
+    img: sport,
     text: "Sports",
   },
 ];
