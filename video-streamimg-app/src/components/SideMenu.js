@@ -7,7 +7,7 @@ import {
 
 const SideMenu = () => {
   return (
-    <div className="w-[220px] shadow-md p-4 h-[92vh] overflow-hidden font-sans hover:overflow-y-auto">
+    <div className="w-[15%] shadow-md p-4 font-sans">
       <div className="border-b py-4">
         {sidemenuSectionOne.map((item) => {
           return (
