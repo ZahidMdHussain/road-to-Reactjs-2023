@@ -8,7 +8,7 @@ import search from "../assets/img/search.png";
 
 const Header = () => {
   return (
-    <div className="grid grid-flow-col py-2 px-4 shadow-lg">
+    <div className="grid grid-flow-col py-2 px-4 shadow-sm">
       <div className="flex items-center col-span-1">
         <img
           className="h-[38px] mx-2 p-2 hover:rounded-full hover:bg-gray-200 hover:cursor-pointer"
