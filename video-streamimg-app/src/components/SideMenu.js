@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import {
   sidemenuSectionOne,
   sidemenuSectionTwo,
@@ -6,8 +7,10 @@ import {
 } from "../utils/config";
 
 const SideMenu = () => {
-  return (
-    <div className="w-[15%] shadow-md p-4 font-sans">
+  const isMenuOpen = useSelector((store) => store.toggle.toggleMenuSlice);
+
+  return !isMenuOpen ? null : (
+    <div className="w-[17%] shadow-md p-4 font-sans">
       <div className="border-b py-4">
         {sidemenuSectionOne.map((item) => {
           return (

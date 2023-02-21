@@ -5,12 +5,20 @@ import video from "../assets/img/add-video.png";
 import notify from "../assets/img/notification.png";
 import user from "../assets/img/user.png";
 import search from "../assets/img/search.png";
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "../utils/toggleSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const toggleHamburgerMenu = () => {
+    dispatch(toggleMenu());
+  };
+
   return (
     <div className="grid grid-flow-col py-2 px-4 shadow-sm">
       <div className="flex items-center col-span-1">
         <img
+          onClick={() => toggleHamburgerMenu()}
           className="h-[38px] mx-2 p-2 hover:rounded-full hover:bg-gray-200 hover:cursor-pointer"
           src={hamburg}
           alt="sidebar-toggle-button"

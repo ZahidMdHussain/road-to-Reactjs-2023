@@ -4,7 +4,7 @@ import thumbnail from "../assets/img/cardthumb.webp";
 
 const Card = () => {
   return (
-    <div className="w-[280px] overflow-hidden mx-4 my-2">
+    <div className="w-[270px] overflow-hidden mx-4 my-2">
       <div className="">
         <img className="rounded-md" src={thumbnail} alt="video-poster" />
       </div>

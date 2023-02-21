@@ -4,7 +4,7 @@ import CardsContainer from "./CardsContainer";
 
 const VideosContainer = () => {
   return (
-    <div className="m-4 w-[83%]">
+    <div className="m-4 w-full">
       <ButtonsList />
       <CardsContainer />
     </div>
