@@ -9,7 +9,23 @@ import {
 const SideMenu = () => {
   const isMenuOpen = useSelector((store) => store.toggle.toggleMenuSlice);
 
-  return !isMenuOpen ? null : (
+  return !isMenuOpen ? (
+    <div className="w-[7%] shadow-md p-2 font-sans">
+      <div className="border-b py-5">
+        {sidemenuSectionOne.map((item) => {
+          return (
+            <div
+              className="flex justify-start flex-col items-center p-1 my-4 py-2 hover:bg-gray-200 rounded-md hover:cursor-pointer"
+              key={item.menuId}
+            >
+              <img className="h-5" src={item.img} alt="" />
+              <span className="text-xs py-2">{item.text}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  ) : (
     <div className="w-[17%] shadow-md p-4 font-sans">
       <div className="border-b py-4">
         {sidemenuSectionOne.map((item) => {
