@@ -1,16 +1,32 @@
 import React from "react";
-// import logo from "../assets/img/channelImg.jpg";
-// import thumbnail from "../assets/img/cardthumb.webp";
 import { useSelector } from "react-redux";
+import TimeAgo from "react-timeago";
 
-const Card = ({ channel, title, views, published, poster, channelImg }) => {
+const Card = ({
+  channel,
+  title,
+  views,
+  published,
+  poster,
+  channelImg,
+  duration,
+}) => {
+  const viewFun = (view) => {
+    return view < 1000
+      ? view
+      : view > 1000 && view < 1000000
+      ? (view / 1000).toFixed(0) + "K"
+      : (view / 1000000).toFixed(1) + "M";
+  };
+
+  const durations = duration.replace(/P|T|S/g, "").replace(/H|M/g, ":");
   const toggleStatus = useSelector((store) => store.toggle.toggleMenuSlice);
   return toggleStatus ? (
     <div className="w-[270px] overflow-hidden mx-4 my-2">
       <div className="relative">
         <img className="rounded-md bg-cover" src={poster} alt="video-poster" />
         <span className="bg-black text-white text-xs absolute bottom-1 right-1 px-1 font-semibold">
-          2:23
+          {durations}
         </span>
       </div>
       <div className="grid grid-flow-col grid-cols-9 my-4">
@@ -24,8 +40,13 @@ const Card = ({ channel, title, views, published, poster, channelImg }) => {
         <div className="col-span-7">
           <p className="text-base font-medium mb-2 line-clamp-2 ">{title}</p>
           <p className="text-xs font-semibold">{channel}</p>
-          <span className="text-xs font-semibold">{views} views</span> &nbsp;
-          <span className="text-xs font-semibold">{published}</span>
+          <span className="text-xs font-semibold">
+            {viewFun(views)} views
+          </span>{" "}
+          &nbsp;
+          <span className="text-xs font-semibold">
+            <TimeAgo date={published} />
+          </span>
         </div>
       </div>
     </div>
@@ -34,7 +55,7 @@ const Card = ({ channel, title, views, published, poster, channelImg }) => {
       <div className="relative">
         <img className="rounded-md bg-cover" src={poster} alt="video-poster" />
         <span className="bg-black text-white text-xs absolute bottom-1 right-1 px-1 font-semibold">
-          2:23
+          {durations}
         </span>
       </div>
       <div className="grid grid-flow-col grid-cols-9 my-4">
@@ -48,8 +69,13 @@ const Card = ({ channel, title, views, published, poster, channelImg }) => {
         <div className="col-span-7">
           <p className="text-base font-medium mb-2 line-clamp-2 ">{title}</p>
           <p className="text-xs font-semibold">{channel}</p>
-          <span className="text-xs font-semibold">{views} views</span> &nbsp;
-          <span className="text-xs font-semibold">{published}</span>
+          <span className="text-xs font-semibold">
+            {viewFun(views)} views
+          </span>{" "}
+          &nbsp;
+          <span className="text-xs font-semibold">
+            <TimeAgo date={published} />
+          </span>
         </div>
       </div>
     </div>

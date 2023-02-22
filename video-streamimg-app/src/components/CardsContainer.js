@@ -11,7 +11,7 @@ const CardsContainer = () => {
   const fetchVideoData = async () => {
     const data = await fetch(YOUTUBE_VIDEO_API);
     const json = await data.json();
-    console.log(json.items);
+    // console.log(json.items);
     setVideo(json.items);
   };
 
@@ -20,13 +20,14 @@ const CardsContainer = () => {
       {video.map((item) => {
         return (
           <Card
-            key={item.id}
-            channel={item.snippet.channelTitle}
-            title={item.snippet.localized.title}
-            views={item.statistics.viewCount}
-            published={item.snippet.publishedAt}
-            poster={item.snippet.thumbnails.medium.url}
-            channelImg={item.snippet.thumbnails.default.url}
+            key={item?.id}
+            channel={item?.snippet?.channelTitle}
+            title={item?.snippet?.localized?.title}
+            views={item?.statistics?.viewCount}
+            published={item?.snippet?.publishedAt}
+            poster={item?.snippet?.thumbnails?.medium?.url}
+            channelImg={item?.snippet?.thumbnails?.default?.url}
+            duration={item?.contentDetails?.duration}
           />
         );
       })}
