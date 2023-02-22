@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/img/channelImg.jpg";
+// import logo from "../assets/img/channelImg.jpg";
 // import thumbnail from "../assets/img/cardthumb.webp";
 import { useSelector } from "react-redux";
 
