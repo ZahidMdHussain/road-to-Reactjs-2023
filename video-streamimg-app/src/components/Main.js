@@ -1,12 +1,12 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import SideMenu from "./SideMenu";
-import VideosContainer from "./VideosContainer";
 
 const Main = () => {
   return (
     <div className="flex">
       <SideMenu />
-      <VideosContainer />
+      <Outlet />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { YOUTUBE_VIDEO_API } from "../utils/constant";
 import Card from "./Card";
 
@@ -19,16 +20,18 @@ const CardsContainer = () => {
     <div className="w-full mx-2 my-8 flex flex-wrap justify-start">
       {video.map((item) => {
         return (
-          <Card
-            key={item?.id}
-            channel={item?.snippet?.channelTitle}
-            title={item?.snippet?.localized?.title}
-            views={item?.statistics?.viewCount}
-            published={item?.snippet?.publishedAt}
-            poster={item?.snippet?.thumbnails?.medium?.url}
-            channelImg={item?.snippet?.thumbnails?.default?.url}
-            duration={item?.contentDetails?.duration}
-          />
+          <Link key={"id" + item?.id} to={"/watch?v=" + item?.id}>
+            <Card
+              key={item?.id}
+              channel={item?.snippet?.channelTitle}
+              title={item?.snippet?.localized?.title}
+              views={item?.statistics?.viewCount}
+              published={item?.snippet?.publishedAt}
+              poster={item?.snippet?.thumbnails?.medium?.url}
+              channelImg={item?.snippet?.thumbnails?.default?.url}
+              duration={item?.contentDetails?.duration}
+            />
+          </Link>
         );
       })}
     </div>
