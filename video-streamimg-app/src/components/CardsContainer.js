@@ -16,7 +16,7 @@ const CardsContainer = () => {
     setVideo(json.items);
   };
 
-  return (
+  return !video ? null : (
     <div className="w-full mx-2 my-8 flex flex-wrap justify-start">
       {video.map((item) => {
         return (
