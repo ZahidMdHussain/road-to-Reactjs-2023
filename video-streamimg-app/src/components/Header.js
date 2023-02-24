@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../assets/img/logo.png";
 import hamburg from "../assets/img/hamburg.png";
 import video from "../assets/img/add-video.png";
@@ -7,11 +7,27 @@ import user from "../assets/img/user.png";
 import search from "../assets/img/search.png";
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/toggleSlice";
+import { YOUTUBE_SEARCH_API } from "../utils/constant";
 
 const Header = () => {
+  const [suggestedVideo, setSuggestedVideo] = useState("");
+  const [suggestedSearchText, setSuggestedSearchText] = useState([]);
   const dispatch = useDispatch();
   const toggleHamburgerMenu = () => {
     dispatch(toggleMenu());
+  };
+  useEffect(() => {
+    const timer = setTimeout(() => getSerachSuggestion(), 200);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [suggestedVideo]);
+
+  const getSerachSuggestion = async () => {
+    const data = await fetch(YOUTUBE_SEARCH_API + suggestedVideo);
+    const json = await data.json();
+    setSuggestedSearchText(json[1]);
   };
 
   return (
@@ -26,16 +42,34 @@ const Header = () => {
         <img className="h-[24px]" src={logo} alt="app-logo" />
       </div>
       <div className="col-span-10 text-center">
-        <input
-          className="w-2/4 p-2 px-6 border border-slate-400 rounded-tl-full rounded-bl-full outline-blue-200"
-          type="text"
-          name=""
-          id=""
-          placeholder="Serach"
-        />
-        <button className="p-2 border bg-gray-50 border-l-0  border-slate-400 rounded-tr-full rounded-br-full align-top hover:bg-gray-200">
-          <img className="h-[24px] px-3" src={search} alt="" />
-        </button>
+        <div>
+          <input
+            className="w-2/4 p-2 px-6 border border-slate-400 rounded-tl-full rounded-bl-full outline-blue-200"
+            type="text"
+            name="search"
+            value={suggestedVideo}
+            placeholder="Serach"
+            onChange={(e) => setSuggestedVideo(e.target.value)}
+          />
+          <button className="p-2 border bg-gray-50 border-l-0  border-slate-400 rounded-tr-full rounded-br-full align-top hover:bg-gray-200">
+            <img className="h-[24px] px-3" src={search} alt="" />
+          </button>
+        </div>
+        <div className="fixed z-20 w-[500px] ml-[230px] rounded-xl mt-1 bg-white shadow-md shadow-slate-400">
+          <ul className="">
+            {suggestedSearchText.map((text) => {
+              return (
+                <li
+                  key={text}
+                  className="flex font-medium mt-1 py-1 px-4 hover:bg-gray-200 hover: cursor-default"
+                >
+                  <img className="h-[20px] my-1 mr-4" src={search} alt="" />
+                  {text}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
       <div className="flex justify-center items-center col-span-1">
         <img

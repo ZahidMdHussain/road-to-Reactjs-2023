@@ -13,7 +13,7 @@ const WatchPage = () => {
   useEffect(() => {
     dispatch(closeMenu());
     fetchVideoById(vidId);
-  }, []);
+  });
   const fetchVideoById = async (vidId) => {
     const data = await fetch(
       YOUTUBE_VIDEO_API_BYID + vidId + "&key=" + API_KEYS
