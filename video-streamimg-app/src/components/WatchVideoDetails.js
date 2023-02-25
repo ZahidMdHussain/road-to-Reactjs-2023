@@ -13,7 +13,7 @@ const WatchVideoDetails = (vidDetails) => {
       : (view / 1000000).toFixed(1) + "M";
   };
   return (
-    <div className="my-4 w-[65%]">
+    <div className="my-4 w-full">
       <h1 className="text-lg font-medium">
         {vidDetails.details.snippet.localized.title}
       </h1>
@@ -37,23 +37,23 @@ const WatchVideoDetails = (vidDetails) => {
           </button>
         </div>
         <div className="flex items-center">
-          <div className="flex items-center font-medium px-3 py-2 bg-gray-200 rounded-tl-full rounded-bl-full hover:bg-gray-300 hover:cursor-pointer">
+          <div className="flex items-center font-medium px-3 py-2 bg-gray-100 rounded-tl-full rounded-bl-full hover:bg-gray-200 hover:cursor-pointer">
             <img className="w-6 mx-1" src={liked} alt="Like-video" />
             <button className="">
               {viewFun(vidDetails.details.statistics.likeCount)}
             </button>
           </div>
-          <div className="flex items-center font-medium px-5 py-2 bg-gray-200 rounded-tr-full rounded-br-full border-l border-gray-300 hover:bg-gray-300 mr-2 hover:cursor-pointer">
+          <div className="flex items-center font-medium px-5 py-2 bg-gray-100 rounded-tr-full rounded-br-full border-l border-gray-300 hover:bg-gray-200 mr-2 hover:cursor-pointer">
             <img className="w-6" src={dislike} alt="Like-video" />
             <button className=""></button>
           </div>
-          <div className="flex items-center font-medium px-3 py-2 bg-gray-200 mx-1 rounded-full hover:bg-gray-300 hover:cursor-pointer">
+          <div className="flex items-center font-medium px-3 py-2 bg-gray-100 mx-1 rounded-full hover:bg-gray-200 hover:cursor-pointer">
             <img className="w-5" src={share} alt="Like-video" />
             <button className="ml-2">Share</button>
           </div>
         </div>
       </div>
-      <div className="p-4 bg-gray-200 rounded-lg">
+      <div className="p-4 bg-gray-100 rounded-lg">
         <TimeAgo
           className="text-sm font-medium"
           date={vidDetails.details.snippet.publishedAt}
