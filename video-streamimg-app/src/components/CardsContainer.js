@@ -17,7 +17,7 @@ const CardsContainer = () => {
   };
 
   return !video ? null : (
-    <div className="w-full mx-2 my-8 flex flex-wrap justify-start">
+    <div className="w-full h-[79vh] scrollbar scrollbar-thin scrollbar-thumb-[#ff0000] scrollbar-track-gray-100 scrollbar-thumb-rounded-md overflow-auto mx-2 mt-8 flex flex-wrap justify-start">
       {video.map((item) => {
         return (
           <Link key={"id" + item?.id} to={"/watch?v=" + item?.id}>

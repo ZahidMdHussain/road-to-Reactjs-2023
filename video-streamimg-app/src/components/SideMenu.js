@@ -11,7 +11,7 @@ const SideMenu = () => {
   const isMenuOpen = useSelector((store) => store.toggle.toggleMenuSlice);
 
   return !isMenuOpen ? (
-    <div className="w-[7%] shadow-md p-2 font-sans">
+    <div className="w-[7%] h-[92vh] overflow-auto p-2 font-sans">
       <div className="border-b py-5">
         {sidemenuSectionOne.map((item, i) => {
           return (
@@ -29,7 +29,7 @@ const SideMenu = () => {
       </div>
     </div>
   ) : (
-    <div className="w-[17%] shadow-md p-4 font-sans">
+    <div className="w-[17%]  h-[92vh] scrollbar scrollbar-thin scrollbar-thumb-[#ff0000] scrollbar-track-gray-100 scrollbar-thumb-rounded-md overflow-auto p-4 font-sans">
       <div className="border-b py-4">
         {sidemenuSectionOne.map((item, i) => {
           return (

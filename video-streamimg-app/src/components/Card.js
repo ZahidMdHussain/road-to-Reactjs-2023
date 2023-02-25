@@ -22,7 +22,7 @@ const Card = ({
   const durations = duration.replace(/P|T|S/g, "").replace(/H|M/g, ":");
   const toggleStatus = useSelector((store) => store.toggle.toggleMenuSlice);
   return toggleStatus ? (
-    <div className="w-[270px] overflow-hidden mx-4 my-2">
+    <div className="w-[270px] overflow-hidden mx-4 mt-4">
       <div className="relative">
         <img className="rounded-md bg-cover" src={poster} alt="video-poster" />
         <span className="bg-black text-white text-xs absolute bottom-1 right-1 px-1 font-semibold">

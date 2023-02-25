@@ -13,7 +13,7 @@ const WatchPage = () => {
   useEffect(() => {
     dispatch(closeMenu());
     fetchVideoById(vidId);
-  });
+  }, []);
   const fetchVideoById = async (vidId) => {
     const data = await fetch(
       YOUTUBE_VIDEO_API_BYID + vidId + "&key=" + API_KEYS
@@ -25,11 +25,10 @@ const WatchPage = () => {
 
   return !vidDetails ? null : (
     <>
-      <div className="m-4 w-full">
-        <div className="flex">
+      <div className="mt-4 mx-4 w-full h-[90vh] overflow-auto scrollbar scrollbar-thin scrollbar-thumb-[#ff0000] scrollbar-track-gray-100 scrollbar-thumb-rounded-md">
+        <div className="flex w-[920px] h-[525px]">
           <iframe
-            width="920"
-            height="525"
+            className="w-full h-full"
             src={"https://www.youtube.com/embed/" + vidId + "?autoplay=1"}
             title="YouTube video player"
             frameBorder="0"
