@@ -5,20 +5,28 @@ import video from "../assets/img/add-video.png";
 import notify from "../assets/img/notification.png";
 import user from "../assets/img/user.png";
 import search from "../assets/img/search.png";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/toggleSlice";
 import { YOUTUBE_SEARCH_API } from "../utils/constant";
+import { storeCache } from "../utils/SearchCache";
 
 const Header = () => {
   const [suggestedVideo, setSuggestedVideo] = useState("");
   const [suggestedSearchText, setSuggestedSearchText] = useState([]);
+  const [showSearch, setShowSearch] = useState(false);
+  const searchCache = useSelector((store) => store.CacheSerach);
   const dispatch = useDispatch();
   const toggleHamburgerMenu = () => {
     dispatch(toggleMenu());
   };
   useEffect(() => {
-    const timer = setTimeout(() => getSerachSuggestion(), 200);
-
+    const timer = setTimeout(() => {
+      if (searchCache[suggestedVideo]) {
+        setSuggestedSearchText(searchCache[suggestedVideo]);
+      } else {
+        getSerachSuggestion();
+      }
+    }, 200);
     return () => {
       clearTimeout(timer);
     };
@@ -28,6 +36,12 @@ const Header = () => {
     const data = await fetch(YOUTUBE_SEARCH_API + suggestedVideo);
     const json = await data.json();
     setSuggestedSearchText(json[1]);
+
+    dispatch(
+      storeCache({
+        [suggestedVideo]: json[1],
+      })
+    );
   };
 
   return (
@@ -51,41 +65,30 @@ const Header = () => {
             value={suggestedVideo}
             placeholder="Serach"
             onChange={(e) => setSuggestedVideo(e.target.value)}
+            onFocus={() => setShowSearch(true)}
+            onBlur={() => setShowSearch(false)}
           />
           <button className="p-2 border bg-gray-50 border-l-0  border-slate-400 rounded-tr-full rounded-br-full align-top hover:bg-gray-200">
             <img className="h-[24px] px-3" src={search} alt="" />
           </button>
-          <div className="fixed z-20 w-[35%] mx-5 text-center rounded-xl mt-1 bg-white shadow-md shadow-slate-400">
-            <ul className="">
-              {suggestedSearchText.map((text) => {
-                return (
-                  <li
-                    key={text}
-                    className="flex font-medium mt-1 py-1 px-4 hover:bg-gray-200 hover: cursor-default"
-                  >
-                    <img className="h-[20px] my-1 mr-4" src={search} alt="" />
-                    {text}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+          {showSearch && (
+            <div className="fixed z-20 w-[35%] mx-5 text-center rounded-xl mt-1 bg-white shadow-md shadow-slate-400">
+              <ul className="">
+                {suggestedSearchText.map((text) => {
+                  return (
+                    <li
+                      key={text}
+                      className="flex font-medium mt-1 py-1 px-4 hover:bg-gray-200 hover: cursor-default"
+                    >
+                      <img className="h-[20px] my-1 mr-4" src={search} alt="" />
+                      {text}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
         </div>
-        {/* <div className="fixed z-20 w-[40%] text-center rounded-xl mt-1 bg-white shadow-md shadow-slate-400">
-          <ul className="">
-            {suggestedSearchText.map((text) => {
-              return (
-                <li
-                  key={text}
-                  className="flex font-medium mt-1 py-1 px-4 hover:bg-gray-200 hover: cursor-default"
-                >
-                  <img className="h-[20px] my-1 mr-4" src={search} alt="" />
-                  {text}
-                </li>
-              );
-            })}
-          </ul>
-        </div> */}
       </div>
       <div className="col-span-3"></div>
       <div className="flex justify-center items-center col-span-1">

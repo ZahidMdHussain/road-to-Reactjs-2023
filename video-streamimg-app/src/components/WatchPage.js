@@ -43,7 +43,7 @@ const WatchPage = () => {
           <div className="col-span-3 bg-gray-200 row-span-2">
             Suggested video
           </div>
-          <div className="col-span-5 h-[200px] bg-gray-200">
+          <div className="col-span-5">
             <Comment />
           </div>
         </div>

@@ -103,3 +103,64 @@ export const sidemenuSectionThree = [
     text: "Sports",
   },
 ];
+
+export const commentsData = [
+  {
+    id: "001",
+    name: "Akshay Saini 1",
+    text: "Lorem ipsum dolor sit amet, consectetur adip",
+    replies: [],
+  },
+  {
+    id: "002",
+    name: "Akshay Saini 2",
+    text: "Lorem ipsum dolor sit amet, consectetur adip",
+    replies: [
+      {
+        id: "003",
+        name: "Akshay Saini 3",
+        text: "Lorem ipsum dolor sit amet, consectetur adip",
+        replies: [],
+      },
+    ],
+  },
+  {
+    id: "004",
+    name: "Akshay Saini 4",
+    text: "Lorem ipsum dolor sit amet, consectetur adip",
+    replies: [
+      {
+        id: "005",
+        name: "Akshay Saini 5",
+        text: "Lorem ipsum dolor sit amet, consectetur adip",
+        replies: [
+          {
+            id: "006",
+            name: "Akshay Saini 6",
+            text: "Lorem ipsum dolor sit amet, consectetur adip",
+            replies: [],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "006",
+    name: "Akshay Saini 7",
+    text: "Lorem ipsum dolor sit amet, consectetur adip",
+    replies: [],
+  },
+  {
+    id: "007",
+    name: "Akshay Saini 8",
+    text: "Lorem ipsum dolor sit amet, consectetur adip",
+    replies: [
+      {
+        id: "008",
+        name: "Akshay Saini 9",
+        text: "Lorem ipsum dolor sit amet, consectetur adip",
+        replies: [],
+      },
+    ],
+  },
+];
