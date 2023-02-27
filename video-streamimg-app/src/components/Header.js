@@ -79,7 +79,10 @@ const Header = () => {
                     <li
                       key={text}
                       className="flex font-medium mt-1 py-1 px-4 hover:bg-gray-200 hover: cursor-default"
-                      onClick={() => setSuggestedVideo(text)}
+                      onClick={() => {
+                        setSuggestedVideo(text);
+                        setShowSearch(false);
+                      }}
                     >
                       <img className="h-[20px] my-1 mr-4" src={search} alt="" />
                       {text}

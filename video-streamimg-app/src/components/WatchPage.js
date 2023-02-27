@@ -4,6 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import { API_KEYS, YOUTUBE_VIDEO_API_BYID } from "../utils/constant";
 import { closeMenu } from "../utils/toggleSlice";
 import Comment from "./Comment";
+import LiveChat from "./LiveChat";
 import WatchVideoDetails from "./WatchVideoDetails";
 
 const WatchPage = () => {
@@ -26,7 +27,7 @@ const WatchPage = () => {
 
   return !vidDetails ? null : (
     <>
-      <div className="mt-4 mx-4 w-full h-[90vh] overflow-auto scrollbar scrollbar-thin scrollbar-thumb-[#ff0000] scrollbar-track-gray-100 scrollbar-thumb-rounded-md">
+      <div className="mt-4 mx-4 w-full h-[90vh] overflow-auto scrollbar-thin scrollbar-thumb-[#ff0000] scrollbar-track-gray-100 scrollbar-thumb-rounded-md">
         <div className="grid grid-cols-8 gap-4">
           <iframe
             className="w-full h-[525px] col-span-5"
@@ -36,7 +37,9 @@ const WatchPage = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
-          <div className="col-span-3 bg-gray-200">Comment-Box</div>
+          <div className="col-span-3  py-4">
+            <LiveChat />
+          </div>
           <div className="col-span-5">
             <WatchVideoDetails details={vidDetails} />
           </div>

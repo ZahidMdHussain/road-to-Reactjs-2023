@@ -29,7 +29,7 @@ const SideMenu = () => {
       </div>
     </div>
   ) : (
-    <div className="w-[15%] min-w-fit h-[92vh] scrollbar scrollbar-thin scrollbar-thumb-[#ff0000] scrollbar-track-gray-100 scrollbar-thumb-rounded-md overflow-auto p-4 font-sans text-sm">
+    <div className="w-[15%] min-w-fit h-[92vh] scrollbar-thin scrollbar-thumb-[#ff0000] scrollbar-track-gray-100 scrollbar-thumb-rounded-md overflow-auto p-4 font-sans text-sm">
       <div className="border-b py-4">
         {sidemenuSectionOne.map((item, i) => {
           return (
