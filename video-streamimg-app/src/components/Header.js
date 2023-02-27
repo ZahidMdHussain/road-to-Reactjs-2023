@@ -66,7 +66,7 @@ const Header = () => {
             placeholder="Serach"
             onChange={(e) => setSuggestedVideo(e.target.value)}
             onFocus={() => setShowSearch(true)}
-            onBlur={() => setShowSearch(false)}
+            // onBlur={() => setShowSearch(false)}
           />
           <button className="p-2 border bg-gray-50 border-l-0  border-slate-400 rounded-tr-full rounded-br-full align-top hover:bg-gray-200">
             <img className="h-[24px] px-3" src={search} alt="" />
@@ -79,6 +79,7 @@ const Header = () => {
                     <li
                       key={text}
                       className="flex font-medium mt-1 py-1 px-4 hover:bg-gray-200 hover: cursor-default"
+                      onClick={() => setSuggestedVideo(text)}
                     >
                       <img className="h-[20px] my-1 mr-4" src={search} alt="" />
                       {text}
