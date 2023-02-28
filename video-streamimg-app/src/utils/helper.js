@@ -1,3 +1,27 @@
+import archaeo from "../assets/img/archaeologist.png";
+import turbanman from "../assets/img/indian-man.png";
+import woman from "../assets/img/woman.png";
+import adult from "../assets/img/adult.png";
+import client from "../assets/img/client.png";
+import indwoman from "../assets/img/indian-woman.png";
+import lady from "../assets/img/lady.png";
+import man from "../assets/img/man.png";
+
+var userAvatar = [
+  archaeo,
+  turbanman,
+  woman,
+  adult,
+  client,
+  indwoman,
+  lady,
+  man,
+];
+
+export function generateAvatar() {
+  return userAvatar[Math.floor(Math.random() * userAvatar.length)];
+}
+
 var nameList = [
   "Time",
   "Past",
