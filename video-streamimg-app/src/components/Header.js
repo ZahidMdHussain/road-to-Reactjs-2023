@@ -7,6 +7,7 @@ import user from "../assets/img/user.png";
 import search from "../assets/img/search.png";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/toggleSlice";
+import { Link } from "react-router-dom";
 import { YOUTUBE_SEARCH_API } from "../utils/constant";
 import { storeCache } from "../utils/SearchCache";
 
@@ -68,9 +69,11 @@ const Header = () => {
             onFocus={() => setShowSearch(true)}
             // onBlur={() => setShowSearch(false)}
           />
-          <button className="p-2 border bg-gray-50 border-l-0  border-slate-400 rounded-tr-full rounded-br-full align-top hover:bg-gray-200">
-            <img className="h-[24px] px-3" src={search} alt="" />
-          </button>
+          <Link key={"id" + suggestedVideo} to={"/search?q=" + suggestedVideo}>
+            <button className="p-2 border bg-gray-50 border-l-0  border-slate-400 rounded-tr-full rounded-br-full align-top hover:bg-gray-200">
+              <img className="h-[24px] px-3" src={search} alt="" />
+            </button>
+          </Link>
           {showSearch && (
             <div className="fixed z-20 w-[35%] mx-5 text-center rounded-xl mt-1 bg-white shadow-md shadow-slate-400">
               <ul className="">

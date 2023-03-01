@@ -1,6 +1,5 @@
 import React from "react";
 import { commentsData } from "../utils/config";
-import user from "../assets/img/user.png";
 
 const Comment = ({ data }) => {
   const { name, text, userAvatar } = data;

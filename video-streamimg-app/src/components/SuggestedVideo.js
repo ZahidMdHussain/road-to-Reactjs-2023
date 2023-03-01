@@ -25,7 +25,6 @@ const SuggestedVideo = (vidDetails) => {
           </Link>
         );
       })}
-      {/* {console.log(videoDetails)} */}
     </div>
   );
 };
