@@ -19,12 +19,12 @@ const SerachContainer = () => {
     setSearchedVideo(json.items);
     // console.log(searchedVideo);
   };
-  return (
-    <div className="w-[70%]">
-      <div className="m-6 px-2 py-1 font-medium text-lg border-b-2 w-full">
+  return !searchedVideo ? null : (
+    <div className="w-full mt-3 h-[90vh] overflow-auto scrollbar-thin scrollbar-thumb-[#ff0000] scrollbar-track-gray-100 scrollbar-thumb-rounded-md">
+      <div className="m-6 px-2 py-1 font-medium text-lg border-b-2 w-[70%]">
         Searched for <span className="italic text-sky-500"> {searchQuery}</span>
       </div>
-      <div className="w-full m-6 px-4 py-2">
+      <div className="m-6 px-4 py-2 w-[70%]">
         {searchedVideo.map((item, index) => {
           return (
             item.id.kind === "youtube#video" && (

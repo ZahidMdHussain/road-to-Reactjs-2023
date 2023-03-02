@@ -54,7 +54,9 @@ const Header = () => {
           src={hamburg}
           alt="sidebar-toggle-button"
         />
-        <img className="h-[24px]" src={logo} alt="app-logo" />
+        <Link to="/">
+          <img className="h-[24px]" src={logo} alt="app-logo" />
+        </Link>
       </div>
       <div className="col-span-3"></div>
       <div className="col-span-4 text-center">

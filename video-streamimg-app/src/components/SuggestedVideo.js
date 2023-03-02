@@ -4,7 +4,10 @@ import TimeAgo from "react-timeago";
 import { Link } from "react-router-dom";
 
 const SuggestedVideo = (vidDetails) => {
-  const vidName = vidDetails.details.snippet.localized.title;
+  const vidName = (vidDetails?.details?.snippet?.localized?.title).replace(
+    /[^a-zA-z0-9 ]/g,
+    ""
+  );
   const [videoDetails, setVideoDetails] = useState([]);
   useEffect(() => {
     getSuggetsedVideo();
@@ -18,9 +21,12 @@ const SuggestedVideo = (vidDetails) => {
   };
   return !videoDetails ? null : videoDetails.length === 0 ? null : (
     <div className="my-4 mx-6">
-      {videoDetails.map((item) => {
+      {videoDetails.map((item, index) => {
         return (
-          <Link key={item?.id.videoId} to={"/watch?v=" + item?.id?.videoId}>
+          <Link
+            key={item?.id.videoId + index}
+            to={"/watch?v=" + item?.id?.videoId}
+          >
             <VideoTiles vidInfo={item} />
           </Link>
         );
