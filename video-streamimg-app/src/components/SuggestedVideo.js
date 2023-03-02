@@ -16,7 +16,7 @@ const SuggestedVideo = (vidDetails) => {
     const json = await data.json();
     setVideoDetails(json.items);
   };
-  return videoDetails.length === 0 ? null : (
+  return !videoDetails ? null : videoDetails.length === 0 ? null : (
     <div className="my-4 mx-6">
       {videoDetails.map((item) => {
         return (
