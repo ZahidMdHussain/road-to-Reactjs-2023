@@ -30,7 +30,7 @@ const WatchPage = () => {
       <div className="mt-4 mx-4 w-full h-[90vh] overflow-auto scrollbar-thin scrollbar-thumb-[#ff0000] scrollbar-track-gray-100 scrollbar-thumb-rounded-md">
         <div className="grid grid-cols-8 gap-4 content-start">
           <iframe
-            className="w-full h-[525px] col-span-5"
+            className="w-full h-[525px] col-span-5 "
             src={"https://www.youtube.com/embed/" + vidId + "?autoplay=1"}
             title="YouTube video player"
             frameBorder="0"

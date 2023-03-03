@@ -17,7 +17,6 @@ const SerachContainer = () => {
     );
     const json = await data.json();
     setSearchedVideo(json.items);
-    // console.log(searchedVideo);
   };
   return !searchedVideo ? null : (
     <div className="w-full mt-3 h-[90vh] overflow-auto scrollbar-thin scrollbar-thumb-[#ff0000] scrollbar-track-gray-100 scrollbar-thumb-rounded-md">
@@ -48,7 +47,7 @@ const SerachContainer = () => {
 const SearchedVideoTiles = ({ vidInfo }) => {
   return (
     <div>
-      <div className="w-full my-2 grid grid-flow-col grid-cols-5 gap-5 p-1">
+      <div className="w-full my-3 grid grid-flow-col grid-cols-5 gap-5 p-2 hover:shadow-md shadow-gray-100 rounded-lg">
         <div className="col-span-2 content-center">
           <img
             className="rounded-md bg-contain min-w-full"

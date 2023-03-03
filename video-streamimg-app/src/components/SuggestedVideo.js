@@ -20,7 +20,7 @@ const SuggestedVideo = (vidDetails) => {
     setVideoDetails(json.items);
   };
   return !videoDetails ? null : videoDetails.length === 0 ? null : (
-    <div className="my-4 mx-6">
+    <div className="my-4 mx-6 shadow-lg shadow-gray-300 rounded-lg p-2">
       {videoDetails.map((item, index) => {
         return (
           <Link

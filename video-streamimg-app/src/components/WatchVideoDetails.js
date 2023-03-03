@@ -4,7 +4,6 @@ import share from "../assets/img/share.png";
 import TimeAgo from "react-timeago";
 
 const WatchVideoDetails = (vidDetails) => {
-  //   console.log(vidDetails.details);
   const viewFun = (view) => {
     return view < 1000
       ? view

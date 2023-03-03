@@ -11,7 +11,7 @@ const SideMenu = () => {
   const isMenuOpen = useSelector((store) => store.toggle.toggleMenuSlice);
 
   return !isMenuOpen ? (
-    <div className="w-max min-w-fit h-[92vh] overflow-auto p-2 font-sans">
+    <div className="w-max min-w-fit h-[92vh] overflow-auto p-2 font-sans shadow-md">
       <div className="border-b py-5">
         {sidemenuSectionOne.map((item, i) => {
           return (
