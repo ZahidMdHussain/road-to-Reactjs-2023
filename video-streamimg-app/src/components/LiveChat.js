@@ -36,7 +36,7 @@ const LiveChat = () => {
   return (
     <div className="mx-8 border shadow-md rounded-lg p-4">
       <div className="border-b-2 pb-3 font-semibold text-base">Live Chat</div>
-      <div className="h-[390px] overflow-auto mx-2 py-1 scrollbar-thin scrollbar-thumb-stone-800 scrollbar-track-gray-100 scrollbar-thumb-rounded-md text-sm flex flex-col-reverse">
+      <div className="h-[390px] overflow-auto mx-2 my-1 py-1 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-100 scrollbar-thumb-rounded-md text-sm flex flex-col-reverse">
         {ChatMessages.map((msg, i) => (
           <UserChat
             key={i}

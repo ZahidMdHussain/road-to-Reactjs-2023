@@ -16,7 +16,7 @@ const Comment = ({ data }) => {
 
 const CommentsList = ({ comments }) => {
   return comments.map((comment) => (
-    <div className="bg-gray-100" key={comment.id}>
+    <div className="bg-gray-50" key={comment.id}>
       <Comment data={comment} />
       <div className="ml-5">
         <CommentsList comments={comment.replies} />

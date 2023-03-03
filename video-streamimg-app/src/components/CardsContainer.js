@@ -12,7 +12,6 @@ const CardsContainer = () => {
   const fetchVideoData = async () => {
     const data = await fetch(YOUTUBE_VIDEO_API);
     const json = await data.json();
-    // console.log(json.items);
     setVideo(json.items);
   };
 

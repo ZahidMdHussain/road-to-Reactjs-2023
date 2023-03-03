@@ -69,10 +69,9 @@ const Header = () => {
             placeholder="Serach"
             onChange={(e) => setSuggestedVideo(e.target.value)}
             onFocus={() => setShowSearch(true)}
-            // onBlur={() => setShowSearch(false)}
           />
           <Link key={"id" + suggestedVideo} to={"/search?q=" + suggestedVideo}>
-            <button className="p-2 border bg-gray-50 border-l-0  border-slate-400 rounded-tr-full rounded-br-full align-top hover:bg-gray-200">
+            <button className="p-2 border bg-gray-50 border-l-0  border-slate-400 rounded-tr-full rounded-br-full align-top hover:bg-slate-100">
               <img className="h-[24px] px-3" src={search} alt="" />
             </button>
           </Link>
