@@ -16,8 +16,10 @@ function Card({
         src={img_cdn_path + cloudinaryImageId}
         alt="food_img"
       />
-      <h3 className="text-lg font-bold text-gray-700">{name}</h3>
-      <h5 className="py-2 font-medium text-gray-700">{cuisines.join(", ")}</h5>
+      <h3 className="text-lg font-bold text-gray-700 line-clamp-1">{name}</h3>
+      <h5 className="py-1 my-2 font-medium text-gray-700 line-clamp-1">
+        {cuisines.join(", ")}
+      </h5>
       <div className="py-4 flex justify-between items-center text-sm font-semibold border-b border-[#ccc] text-gray-600">
         <p
           className={`flex justify-between items-center ${

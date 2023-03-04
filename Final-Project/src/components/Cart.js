@@ -54,7 +54,9 @@ const Cart = () => {
                         alt="food-image"
                       />
                       <div className="ml-8 text-base font-medium text-slate-700">
-                        <h2 className="text-xl font-semibold">{item?.name}</h2>
+                        <h2 className="text-xl font-semibold line-clamp-1">
+                          {item?.name}
+                        </h2>
                         <h6 className="font-semibold">
                           Type :{" "}
                           {item?.isVeg == 1 ? (
@@ -95,11 +97,11 @@ const Cart = () => {
                 return (
                   <>
                     <div
-                      className="flex justify-between px-1 mb-2 tracking-wide text-gray-600"
+                      className="grid grid-flow-col gap-2 grid-cols-5 px-1 mb-2 tracking-wide text-gray-600"
                       key={item.id}
                     >
-                      <h2>{item?.name}</h2>
-                      <h2>₹ {item?.price / 100}</h2>
+                      <h2 className="line-clamp-1 col-span-4">{item?.name}</h2>
+                      <h2 className="col-span-1">₹ {item?.price / 100}</h2>
                     </div>
                     <h5 className="hidden">{price.push(item?.price / 100)}</h5>
                   </>

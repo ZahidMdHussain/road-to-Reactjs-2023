@@ -75,7 +75,7 @@ const SelectResturant = () => {
                     key={item.id}
                   >
                     <div className="">
-                      <h4 className="m-1 text-sm font-bold text-black">
+                      <h4 className="m-1 text-sm font-bold text-black line-clamp-1">
                         {item.name}
                       </h4>
                       <h5 className="m-1 text-sm font-medium text-gray-700">
