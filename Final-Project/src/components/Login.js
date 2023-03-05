@@ -8,7 +8,7 @@ const Login = () => {
 
   return (
     <>
-      <div className="min-h-[60vh] flex justify-center items-center bg-[#0e7490]">
+      <div className="min-h-[59vh] flex justify-center items-center bg-[#0e7490]">
         <div className="bg-[#f4f9fd] max-w-[60vw] grid grid-flow-col grid-cols-9">
           <div className="col-span-5 p-4 flex flex-col justify-center items-center font-fsans">
             <h2 className="text-2xl font-bold my-4 text-[#0e7490]">Log In</h2>
